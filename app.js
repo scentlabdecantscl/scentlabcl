@@ -122,7 +122,6 @@ let cart = [];
 const selectedSizes = {};
 const selectedPhotoIndex = {};
 
-// Cargar carrito guardado si existe
 try {
   const savedCart = localStorage.getItem('scentlab_cart');
   if (savedCart) cart = JSON.parse(savedCart);
@@ -130,13 +129,11 @@ try {
   cart = [];
 }
 
-// Inicializar tamaños y fotos predeterminadas
 PERFUMES_DATA.forEach(p => {
   selectedSizes[p.id] = '5ml';
   selectedPhotoIndex[p.id] = 0;
 });
 
-// Formatear moneda chilena
 const formatCLP = (amount) => {
   return new Intl.NumberFormat('es-CL', {
     style: 'currency',
@@ -145,7 +142,6 @@ const formatCLP = (amount) => {
   }).format(amount);
 };
 
-// Copiar texto al portapapeles
 async function copyToClipboard(text) {
   try {
     if (navigator.clipboard && window.isSecureContext) {
@@ -176,20 +172,17 @@ function saveCart() {
   } catch (e) {}
 }
 
-// Cambiar foto activa en tarjeta
 function setPhotoIndex(perfumeId, index, event) {
   if (event) event.stopPropagation();
   selectedPhotoIndex[perfumeId] = index;
   renderPerfumes();
 }
 
-// Cambiar tamaño seleccionado (3ml / 5ml / 10ml)
 function changeSize(perfumeId, size) {
   selectedSizes[perfumeId] = size;
   renderPerfumes();
 }
 
-// Renderizar tarjetas del catálogo
 function renderPerfumes() {
   const grid = document.getElementById('perfumes-grid');
   const noResults = document.getElementById('no-results');
@@ -224,11 +217,9 @@ function renderPerfumes() {
     return `
       <div class="bg-brand-card rounded-2xl border border-white/10 hover:border-brand-gold/40 transition-all duration-300 flex flex-col justify-between overflow-hidden group shadow-lg">
         
-        <!-- Visor de Foto + Controles de Galería -->
         <div onclick="openProductModal('${perfume.id}')" class="relative h-64 bg-gradient-to-b from-brand-black to-brand-card overflow-hidden flex items-center justify-center p-3 cursor-pointer" title="Haz clic para ver detalles">
           <img src="${currentImgUrl}" alt="${perfume.name}" class="h-full w-full object-cover rounded-xl filter drop-shadow-md group-hover:scale-105 transition-transform duration-500" onerror="this.onerror=null; this.src='${fallbackSvg}';">
           
-          <!-- Badges -->
           <div class="absolute top-3 left-3 flex flex-wrap gap-1.5 z-10">
             <span class="px-2.5 py-1 rounded-full bg-brand-black/85 border border-brand-gold/40 text-[10px] text-brand-gold font-semibold uppercase tracking-wider backdrop-blur-sm">
               ${perfume.category}
@@ -236,7 +227,6 @@ function renderPerfumes() {
             ${perfume.badge ? `<span class="px-2.5 py-1 rounded-full bg-brand-gold text-black text-[10px] font-bold uppercase tracking-wider">${perfume.badge}</span>` : ''}
           </div>
           
-          <!-- Botones Selector Foto 1 / Foto 2 -->
           <div class="absolute bottom-3 right-3 flex items-center gap-1.5 bg-black/80 backdrop-blur-md px-2 py-1 rounded-full border border-white/10 z-10">
             <button type="button" onclick="setPhotoIndex('${perfume.id}', 0, event)" class="px-2.5 py-1 rounded-full text-[10px] font-bold transition-all ${activePhoto === 0 ? 'bg-brand-gold text-black shadow-md' : 'text-gray-400 hover:text-white'}">
               Foto 1
@@ -247,7 +237,6 @@ function renderPerfumes() {
           </div>
         </div>
 
-        <!-- Detalles del Perfume -->
         <div class="p-5 flex-grow flex flex-col justify-between">
           <div>
             <div class="flex items-center justify-between gap-2 mb-1">
@@ -259,7 +248,6 @@ function renderPerfumes() {
 
             <p class="text-xs text-gray-300 font-light mb-4 leading-relaxed">${perfume.description}</p>
 
-            <!-- Notas Olfativas -->
             <div class="bg-brand-black/60 p-3 rounded-xl border border-white/5 text-[11px] space-y-1 mb-5">
               <div><strong class="text-brand-gold font-medium">Salida:</strong> <span class="text-gray-300">${perfume.notes.salida}</span></div>
               <div><strong class="text-brand-gold font-medium">Corazón:</strong> <span class="text-gray-300">${perfume.notes.corazon}</span></div>
@@ -267,7 +255,6 @@ function renderPerfumes() {
             </div>
           </div>
 
-          <!-- Selector de Tamaño (3ml / 5ml / 10ml) -->
           <div>
             <label class="text-[10px] text-gray-400 uppercase tracking-wider block mb-2 font-semibold">Seleccionar Formato Decant:</label>
             <div class="grid grid-cols-3 gap-2 mb-4">
@@ -285,13 +272,11 @@ function renderPerfumes() {
               </button>
             </div>
 
-            <!-- Muestra de Precio -->
             <div class="flex items-center justify-between pt-2 border-t border-white/10 mb-4">
               <span class="text-xs text-gray-400">Precio (${activeSize}):</span>
               <span class="font-serif text-xl font-bold text-brand-gold">${formatCLP(currentPrice)}</span>
             </div>
 
-            <!-- Botones de Acción -->
             <div class="space-y-2">
               <button type="button" onclick="sendSingleWhatsApp('${perfume.id}')" class="w-full py-2.5 rounded-xl gold-button font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2">
                 <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
@@ -315,7 +300,6 @@ function renderPerfumes() {
   }).join('');
 }
 
-// Modal de ficha técnica del perfume
 function openProductModal(perfumeId) {
   const perfume = PERFUMES_DATA.find(p => p.id === perfumeId);
   if (!perfume) return;
@@ -393,7 +377,6 @@ function closeProductModal() {
   modal.classList.remove('flex');
 }
 
-// Construir mensaje de pedido individual
 function buildSingleOrderMessage(perfumeId) {
   const perfume = PERFUMES_DATA.find(p => p.id === perfumeId);
   const size = selectedSizes[perfumeId] || '5ml';
@@ -406,24 +389,23 @@ function buildSingleOrderMessage(perfumeId) {
     `📍 Punto de entrega preferido (Talagante / Metro Línea 1 / Envío por pagar): `;
 }
 
-// Pedir 1 perfume directo por WhatsApp
+// Redirección directa a WhatsApp (evita bloqueo de popups en móvil)
 function sendSingleWhatsApp(perfumeId) {
   const text = buildSingleOrderMessage(perfumeId);
   const url = `https://wa.me/${CONFIG.whatsappNumber}?text=${encodeURIComponent(text)}`;
-  window.open(url, '_blank', 'noopener');
+  window.location.href = url;
 }
 
-// Encargar 1 perfume por Instagram
+// Copia pedido y redirige directo a Instagram
 async function sendSingleInstagram(perfumeId) {
   const text = buildSingleOrderMessage(perfumeId);
   await copyToClipboard(text);
-  showToast('Pedido copiado. Pégalo en nuestro DM de Instagram');
+  showToast('Pedido copiado. Abriendo Instagram...');
   setTimeout(() => {
-    window.open(CONFIG.instagramUrl, '_blank', 'noopener');
-  }, 450);
+    window.location.href = CONFIG.instagramUrl;
+  }, 350);
 }
 
-// Agregar al carrito / lista
 function addToCart(perfumeId) {
   const perfume = PERFUMES_DATA.find(p => p.id === perfumeId);
   const size = selectedSizes[perfumeId] || '5ml';
@@ -573,7 +555,6 @@ function initApp() {
   closeBtn.addEventListener('click', closeDrawer);
   backdrop.addEventListener('click', closeDrawer);
 
-  // Checkout del Carrito vía WhatsApp
   document.getElementById('cart-checkout-btn').addEventListener('click', () => {
     if (cart.length === 0) {
       showToast('Agrega decants a tu lista primero');
@@ -581,10 +562,9 @@ function initApp() {
     }
     const text = buildCartOrderMessage();
     const url = `https://wa.me/${CONFIG.whatsappNumber}?text=${encodeURIComponent(text)}`;
-    window.open(url, '_blank', 'noopener');
+    window.location.href = url;
   });
 
-  // Checkout del Carrito vía Instagram
   document.getElementById('cart-ig-checkout-btn').addEventListener('click', async () => {
     if (cart.length === 0) {
       showToast('Agrega decants a tu lista primero');
@@ -592,13 +572,12 @@ function initApp() {
     }
     const text = buildCartOrderMessage();
     await copyToClipboard(text);
-    showToast('Lista copiada. Pégalo en nuestro DM de Instagram');
+    showToast('Lista copiada. Abriendo Instagram...');
     setTimeout(() => {
-      window.open(CONFIG.instagramUrl, '_blank', 'noopener');
-    }, 450);
+      window.location.href = CONFIG.instagramUrl;
+    }, 350);
   });
 
-  // Vaciar carrito
   document.getElementById('cart-clear-btn').addEventListener('click', () => {
     cart = [];
     saveCart();
@@ -606,7 +585,6 @@ function initApp() {
     showToast('Lista vaciada');
   });
 
-  // Modal Backdrop & Escape key
   document.getElementById('modal-backdrop').addEventListener('click', closeProductModal);
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
@@ -615,7 +593,6 @@ function initApp() {
     }
   });
 
-  // Menú móvil
   const mobileMenuBtn = document.getElementById('mobile-menu-btn');
   const mobileMenu = document.getElementById('mobile-menu');
   mobileMenuBtn.addEventListener('click', () => {
@@ -625,7 +602,6 @@ function initApp() {
     link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
   });
 
-  // Filtros & Buscador
   const searchInput = document.getElementById('search-input');
   const clearSearchBtn = document.getElementById('clear-search-btn');
 
