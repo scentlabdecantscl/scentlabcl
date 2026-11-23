@@ -2,14 +2,12 @@
    SCENT LAB CHILE - BASE DE DATOS DE PERFUMES E INTERACTIVIDAD
    ========================================================================= */
 
-// 1. CONFIGURACIÓN DE CONTACTO
 const CONFIG = {
   whatsappNumber: '56934040525',
   instagramUrl: 'https://www.instagram.com/scentlabdecants.cl/',
   instagramHandle: '@scentlabdecants.cl'
 };
 
-// 2. CATÁLOGO DE PERFUMES (Edita o agrega nuevos perfumes aquí)
 const PERFUMES_DATA = [
   {
     id: 'lattafa-yara',
@@ -115,7 +113,6 @@ const PERFUMES_DATA = [
   }
 ];
 
-// 3. ESTADO GLOBAL
 let currentCategory = 'Todos';
 let searchQuery = '';
 let cart = [];
@@ -142,11 +139,10 @@ const formatCLP = (amount) => {
   }).format(amount);
 };
 
-async function copyToClipboard(text) {
+function copyToClipboard(text) {
   try {
     if (navigator.clipboard && window.isSecureContext) {
-      await navigator.clipboard.writeText(text);
-      return true;
+      navigator.clipboard.writeText(text).catch(() => {});
     }
   } catch (err) {}
   const textArea = document.createElement('textarea');
@@ -158,12 +154,8 @@ async function copyToClipboard(text) {
   textArea.select();
   try {
     document.execCommand('copy');
-    document.body.removeChild(textArea);
-    return true;
-  } catch (err) {
-    document.body.removeChild(textArea);
-    return false;
-  }
+  } catch (err) {}
+  document.body.removeChild(textArea);
 }
 
 function saveCart() {
@@ -181,6 +173,28 @@ function setPhotoIndex(perfumeId, index, event) {
 function changeSize(perfumeId, size) {
   selectedSizes[perfumeId] = size;
   renderPerfumes();
+}
+
+function buildSingleOrderMessage(perfumeId) {
+  const perfume = PERFUMES_DATA.find(p => p.id === perfumeId);
+  const size = selectedSizes[perfumeId] || '5ml';
+  const price = perfume.prices[size];
+
+  return `¡Hola Scent Lab Chile! 👋 Quisiera encargar este decant:\n\n` +
+    `• Perfume: ${perfume.brand} - ${perfume.name} (${perfume.concentration})\n` +
+    `• Formato: ${size}\n` +
+    `• Valor: ${formatCLP(price)}\n\n` +
+    `📍 Punto de entrega preferido (Talagante / Metro Línea 1 / Envío por pagar): `;
+}
+
+function getWhatsAppUrl(perfumeId) {
+  return `https://wa.me/${CONFIG.whatsappNumber}?text=${encodeURIComponent(buildSingleOrderMessage(perfumeId))}`;
+}
+
+function copySingleOrder(perfumeId) {
+  const text = buildSingleOrderMessage(perfumeId);
+  copyToClipboard(text);
+  showToast('Pedido copiado. Pégalo en nuestro DM de Instagram');
 }
 
 function renderPerfumes() {
@@ -213,6 +227,7 @@ function renderPerfumes() {
     const activePhoto = selectedPhotoIndex[perfume.id] || 0;
     const currentImgUrl = perfume.images[activePhoto] || perfume.images[0];
     const fallbackSvg = `https://placehold.co/600x800/141418/d4af37?text=${encodeURIComponent(perfume.name)}`;
+    const waUrl = getWhatsAppUrl(perfume.id);
 
     return `
       <div class="bg-brand-card rounded-2xl border border-white/10 hover:border-brand-gold/40 transition-all duration-300 flex flex-col justify-between overflow-hidden group shadow-lg">
@@ -278,15 +293,15 @@ function renderPerfumes() {
             </div>
 
             <div class="space-y-2">
-              <button type="button" onclick="sendSingleWhatsApp('${perfume.id}')" class="w-full py-2.5 rounded-xl gold-button font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2">
+              <a href="${waUrl}" target="_blank" rel="noopener" class="w-full py-2.5 rounded-xl gold-button font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2">
                 <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
                 Pedir por WhatsApp
-              </button>
+              </a>
 
-              <button type="button" onclick="sendSingleInstagram('${perfume.id}')" class="w-full py-2.5 rounded-xl ig-button font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2">
+              <a href="${CONFIG.instagramUrl}" target="_blank" rel="noopener" onclick="copySingleOrder('${perfume.id}')" class="w-full py-2.5 rounded-xl ig-button font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2">
                 <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
                 Encargar por Instagram
-              </button>
+              </a>
 
               <button type="button" onclick="addToCart('${perfume.id}')" class="w-full py-2 rounded-xl border border-white/10 hover:border-brand-gold/60 text-gray-300 hover:text-white text-xs font-semibold tracking-wider transition-colors flex items-center justify-center gap-1.5">
                 <span>+ Agregar a mi lista de pedido</span>
@@ -309,6 +324,7 @@ function openProductModal(perfumeId) {
   const activeSize = selectedSizes[perfume.id] || '5ml';
   const currentPrice = perfume.prices[activeSize];
   const fallbackSvg = `https://placehold.co/600x800/141418/d4af37?text=${encodeURIComponent(perfume.name)}`;
+  const waUrl = getWhatsAppUrl(perfume.id);
 
   content.innerHTML = `
     <button type="button" onclick="closeProductModal()" class="absolute top-4 right-4 z-20 bg-black/70 text-gray-300 hover:text-white p-2 rounded-full border border-white/15">
@@ -353,12 +369,12 @@ function openProductModal(perfumeId) {
             <span class="font-serif text-xl font-bold text-brand-gold">${formatCLP(currentPrice)}</span>
           </div>
 
-          <button type="button" onclick="sendSingleWhatsApp('${perfume.id}')" class="w-full py-2.5 rounded-xl gold-button font-bold text-xs uppercase tracking-wider">
+          <a href="${waUrl}" target="_blank" rel="noopener" class="w-full py-2.5 rounded-xl gold-button font-bold text-xs uppercase tracking-wider flex items-center justify-center">
             Pedir por WhatsApp
-          </button>
-          <button type="button" onclick="sendSingleInstagram('${perfume.id}')" class="w-full py-2.5 rounded-xl ig-button font-bold text-xs uppercase tracking-wider">
+          </a>
+          <a href="${CONFIG.instagramUrl}" target="_blank" rel="noopener" onclick="copySingleOrder('${perfume.id}')" class="w-full py-2.5 rounded-xl ig-button font-bold text-xs uppercase tracking-wider flex items-center justify-center">
             Encargar por Instagram
-          </button>
+          </a>
           <button type="button" onclick="addToCart('${perfume.id}'); closeProductModal()" class="w-full py-2 rounded-xl border border-white/15 text-gray-200 hover:text-white text-xs font-semibold">
             + Agregar a mi lista
           </button>
@@ -375,35 +391,6 @@ function closeProductModal() {
   const modal = document.getElementById('product-modal');
   modal.classList.add('hidden');
   modal.classList.remove('flex');
-}
-
-function buildSingleOrderMessage(perfumeId) {
-  const perfume = PERFUMES_DATA.find(p => p.id === perfumeId);
-  const size = selectedSizes[perfumeId] || '5ml';
-  const price = perfume.prices[size];
-
-  return `¡Hola Scent Lab Chile! 👋 Quisiera encargar este decant:\n\n` +
-    `• Perfume: ${perfume.brand} - ${perfume.name} (${perfume.concentration})\n` +
-    `• Formato: ${size}\n` +
-    `• Valor: ${formatCLP(price)}\n\n` +
-    `📍 Punto de entrega preferido (Talagante / Metro Línea 1 / Envío por pagar): `;
-}
-
-// Redirección directa a WhatsApp (evita bloqueo de popups en móvil)
-function sendSingleWhatsApp(perfumeId) {
-  const text = buildSingleOrderMessage(perfumeId);
-  const url = `https://wa.me/${CONFIG.whatsappNumber}?text=${encodeURIComponent(text)}`;
-  window.location.href = url;
-}
-
-// Copia pedido y redirige directo a Instagram
-async function sendSingleInstagram(perfumeId) {
-  const text = buildSingleOrderMessage(perfumeId);
-  await copyToClipboard(text);
-  showToast('Pedido copiado. Abriendo Instagram...');
-  setTimeout(() => {
-    window.location.href = CONFIG.instagramUrl;
-  }, 350);
 }
 
 function addToCart(perfumeId) {
@@ -431,12 +418,31 @@ function addToCart(perfumeId) {
   showToast(`Agregado: ${perfume.name} (${size})`);
 }
 
+function buildCartOrderMessage() {
+  const deliverySelect = document.getElementById('delivery-select');
+  const deliveryMethod = deliverySelect ? deliverySelect.value : 'Talagante (Sin costo $0)';
+  let text = `¡Hola Scent Lab Chile! 👋 Quisiera encargar la siguiente lista de decants:\n\n`;
+  let total = 0;
+
+  cart.forEach((item, i) => {
+    const subtotal = item.price * item.quantity;
+    total += subtotal;
+    text += `${i + 1}. ${item.brand} - ${item.name}\n   • Formato: ${item.size} x${item.quantity} (${formatCLP(subtotal)})\n`;
+  });
+
+  text += `\n--------------------------\n`;
+  text += `💰 TOTAL ESTIMADO: ${formatCLP(total)}\n`;
+  text += `📍 Entrega: ${deliveryMethod}`;
+  return text;
+}
+
 function updateCartUI() {
   const badge = document.getElementById('cart-badge');
   const cartContainer = document.getElementById('cart-items-container');
   const totalDisplay = document.getElementById('cart-total-price');
   const titleCount = document.getElementById('cart-count-title');
   const clearBtn = document.getElementById('cart-clear-btn');
+  const checkoutBtn = document.getElementById('cart-checkout-btn');
 
   const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
   const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
@@ -445,9 +451,15 @@ function updateCartUI() {
     badge.innerText = totalItems;
     badge.classList.remove('opacity-0');
     clearBtn.classList.remove('hidden');
+    if (checkoutBtn) {
+      checkoutBtn.href = `https://wa.me/${CONFIG.whatsappNumber}?text=${encodeURIComponent(buildCartOrderMessage())}`;
+    }
   } else {
     badge.classList.add('opacity-0');
     clearBtn.classList.add('hidden');
+    if (checkoutBtn) {
+      checkoutBtn.href = `https://wa.me/${CONFIG.whatsappNumber}`;
+    }
   }
 
   titleCount.innerText = `(${totalItems})`;
@@ -501,23 +513,6 @@ function removeFromCart(index) {
   updateCartUI();
 }
 
-function buildCartOrderMessage() {
-  const deliveryMethod = document.getElementById('delivery-select').value;
-  let text = `¡Hola Scent Lab Chile! 👋 Quisiera encargar la siguiente lista de decants:\n\n`;
-  let total = 0;
-
-  cart.forEach((item, i) => {
-    const subtotal = item.price * item.quantity;
-    total += subtotal;
-    text += `${i + 1}. ${item.brand} - ${item.name}\n   • Formato: ${item.size} x${item.quantity} (${formatCLP(subtotal)})\n`;
-  });
-
-  text += `\n--------------------------\n`;
-  text += `💰 TOTAL ESTIMADO: ${formatCLP(total)}\n`;
-  text += `📍 Entrega: ${deliveryMethod}`;
-  return text;
-}
-
 let toastTimeout;
 function showToast(msg) {
   const toast = document.getElementById('toast');
@@ -534,7 +529,6 @@ function showToast(msg) {
   }, 3000);
 }
 
-// 4. INICIALIZACIÓN DE EVENTOS
 function initApp() {
   const drawer = document.getElementById('cart-drawer');
   const toggleBtn = document.getElementById('cart-toggle-btn');
@@ -555,27 +549,23 @@ function initApp() {
   closeBtn.addEventListener('click', closeDrawer);
   backdrop.addEventListener('click', closeDrawer);
 
-  document.getElementById('cart-checkout-btn').addEventListener('click', () => {
+  document.getElementById('delivery-select').addEventListener('change', updateCartUI);
+
+  document.getElementById('cart-checkout-btn').addEventListener('click', (e) => {
     if (cart.length === 0) {
+      e.preventDefault();
       showToast('Agrega decants a tu lista primero');
-      return;
     }
-    const text = buildCartOrderMessage();
-    const url = `https://wa.me/${CONFIG.whatsappNumber}?text=${encodeURIComponent(text)}`;
-    window.location.href = url;
   });
 
-  document.getElementById('cart-ig-checkout-btn').addEventListener('click', async () => {
+  document.getElementById('cart-ig-checkout-btn').addEventListener('click', (e) => {
     if (cart.length === 0) {
+      e.preventDefault();
       showToast('Agrega decants a tu lista primero');
       return;
     }
-    const text = buildCartOrderMessage();
-    await copyToClipboard(text);
-    showToast('Lista copiada. Abriendo Instagram...');
-    setTimeout(() => {
-      window.location.href = CONFIG.instagramUrl;
-    }, 350);
+    copyToClipboard(buildCartOrderMessage());
+    showToast('Lista copiada. Pégalo en nuestro DM de Instagram');
   });
 
   document.getElementById('cart-clear-btn').addEventListener('click', () => {
