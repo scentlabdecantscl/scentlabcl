@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Scent Lab Chile | Catálogo de Decants de Perfumes Originales</title>
-  
+
   <!-- SEO & Social Meta Tags -->
-  <meta name="description" content="Decants de perfumes 100% originales en Chile. Formatos de 3ml, 5ml y 10ml. Entregas sin costo en Talagante y Metro Línea 1.">
+  <meta name="description" content="Decants de perfumes 100% originales en Chile. Formatos de 3 ml, 5 ml y 10 ml. Entregas sin costo en Talagante y Metro Línea 1.">
   <meta property="og:title" content="Scent Lab Chile - Decants de Perfumería de Lujo">
-  <meta property="og:description" content="Descubre fragancias exclusivas en formatos decant de 3ml, 5ml y 10ml. 100% originales.">
+  <meta property="og:description" content="Descubre fragancias exclusivas en formatos decant de 3 ml, 5 ml y 10 ml. 100% originales.">
   <meta property="og:type" content="website">
 
   <!-- Google Fonts -->
@@ -40,39 +40,32 @@
           }
         }
       }
-    }
+    };
   </script>
 
   <!-- Estilos personalizados -->
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=10">
 </head>
-<body class="min-h-screen flex flex-col justify-between selection:bg-brand-gold selection:text-black">
+<body class="bg-brand-black text-white min-h-screen flex flex-col justify-between selection:bg-brand-gold selection:text-black">
 
   <!-- =========================================================================
-       1. HEADER STICKY CON LOGO, NAVEGACIÓN Y MENÚ MÓVIL
+       1. HEADER STICKY
        ========================================================================= -->
-  <header class="sticky top-0 z-40 bg-brand-black/90 backdrop-blur-md border-b border-white/10 transition-all duration-300">
+  <header class="sticky top-0 z-40 bg-brand-black/95 backdrop-blur-md border-b border-white/10">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-      
-      <!-- Logo e Identidad -->
-      <a href="#" class="flex items-center gap-3 group">
+
+      <!-- Logo -->
+      <a href="#inicio" class="flex items-center gap-3 group">
         <div class="relative w-11 h-11 rounded-full border border-brand-gold/60 flex items-center justify-center bg-brand-card overflow-hidden group-hover:border-brand-gold transition-colors shadow-[0_0_15px_rgba(212,175,55,0.2)]">
-          <img 
-            src="logo.png" 
-            alt="Scent Lab Chile Logo" 
-            class="w-full h-full object-cover rounded-full" 
-            onerror="this.style.display='none'; document.getElementById('logo-fallback-icon').classList.remove('hidden');"
-          />
+          <img
+            id="brand-logo-img"
+            src="logo.png"
+            alt="Scent Lab Chile Logo"
+            class="w-full h-full object-cover rounded-full"
+          >
           <div id="logo-fallback-icon" class="hidden w-full h-full flex items-center justify-center bg-gradient-to-br from-brand-card to-black">
-            <svg class="w-6 h-6 text-brand-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M12 2L15 8L21 9L16.5 13.5L18 19.5L12 16.5L6 19.5L7.5 13.5L3 9L9 8L12 2Z" fill="url(#goldGradient)" stroke="none" />
-              <defs>
-                <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stop-color="#fff2a3" />
-                  <stop offset="50%" stop-color="#d4af37" />
-                  <stop offset="100%" stop-color="#aa7c11" />
-                </linearGradient>
-              </defs>
+            <svg class="w-6 h-6 text-brand-gold" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 2L15 8L21 9L16.5 13.5L18 19.5L12 16.5L6 19.5L7.5 13.5L3 9L9 8L12 2Z" />
             </svg>
           </div>
         </div>
@@ -83,40 +76,63 @@
       </a>
 
       <!-- Navegación Escritorio -->
-      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-300">
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-300" aria-label="Navegación principal">
         <a href="#catalogo" class="hover:text-brand-gold transition-colors">Catálogo</a>
         <a href="#como-funciona" class="hover:text-brand-gold transition-colors">¿Cómo funciona?</a>
-        <a href="#entregas" class="hover:text-brand-gold transition-colors">Envíos & Entregas</a>
+        <a href="#entregas" class="hover:text-brand-gold transition-colors">Envíos &amp; Entregas</a>
       </nav>
 
       <!-- Botones de Acción -->
       <div class="flex items-center gap-2 sm:gap-3">
         <!-- Instagram -->
-        <a href="https://www.instagram.com/scentlabdecants.cl/" target="_blank" rel="noopener" class="p-2.5 rounded-full border border-white/10 hover:border-pink-500/60 text-gray-300 hover:text-pink-400 transition-colors" title="Instagram @scentlabdecants.cl">
-          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+        <a
+          href="https://www.instagram.com/scentlabdecants.cl/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="p-2.5 rounded-full border border-white/10 hover:border-pink-500/60 text-gray-300 hover:text-pink-400 transition-colors"
+          title="Instagram @scentlabdecants.cl"
+          aria-label="Instagram de Scent Lab Chile"
+        >
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
             <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
           </svg>
         </a>
 
-        <!-- Toggle Lista/Carrito -->
-        <button id="cart-toggle-btn" type="button" class="relative p-2.5 rounded-full border border-white/10 hover:border-brand-gold/60 text-gray-300 hover:text-brand-gold transition-colors" title="Mi Lista de Decants">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+        <!-- Botón Lista / Carrito -->
+        <button
+          id="cart-toggle-btn"
+          type="button"
+          class="relative p-2.5 rounded-full border border-white/10 hover:border-brand-gold/60 text-gray-300 hover:text-brand-gold transition-colors cursor-pointer"
+          title="Mi Lista de Decants"
+          aria-label="Abrir lista de pedido"
+        >
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
           </svg>
-          <span id="cart-badge" class="absolute -top-1 -right-1 bg-brand-gold text-black text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center opacity-0 transition-opacity">0</span>
+          <span id="cart-badge" class="hidden absolute -top-1 -right-1 bg-brand-gold text-black text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center">0</span>
         </button>
 
-        <!-- Botón Contacto WhatsApp -->
-        <a href="https://wa.me/56934040525?text=%C2%A1Hola%20Scent%20Lab%20Chile!%20%F0%9F%91%8B%20Quisiera%20consultar%20por%20decants%20disponibles." target="_blank" rel="noopener" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-full gold-button font-semibold text-xs tracking-wider uppercase shadow-md">
-          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+        <!-- Botón WhatsApp Escritorio -->
+        <a
+          href="https://wa.me/56934040525?text=%C2%A1Hola%20Scent%20Lab%20Chile!%20Quisiera%20consultar%20por%20decants%20disponibles."
+          target="_blank"
+          rel="noopener noreferrer"
+          class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-full gold-button font-semibold text-xs tracking-wider uppercase shadow-md"
+        >
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
             <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
           </svg>
           WhatsApp
         </a>
 
-        <!-- Botón Menú Móvil -->
-        <button id="mobile-menu-btn" type="button" class="md:hidden p-2.5 rounded-full border border-white/10 text-gray-300 hover:text-brand-gold transition-colors" aria-label="Abrir menú">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <!-- Menú Móvil -->
+        <button
+          id="mobile-menu-btn"
+          type="button"
+          class="md:hidden p-2.5 rounded-full border border-white/10 text-gray-300 hover:text-brand-gold transition-colors cursor-pointer"
+          aria-label="Abrir menú móvil"
+        >
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
           </svg>
         </button>
@@ -127,16 +143,16 @@
     <div id="mobile-menu" class="hidden md:hidden bg-brand-card border-b border-white/10 px-4 py-4 space-y-3">
       <a href="#catalogo" class="mobile-nav-link block py-2 text-sm text-gray-200 hover:text-brand-gold font-medium">Catálogo</a>
       <a href="#como-funciona" class="mobile-nav-link block py-2 text-sm text-gray-200 hover:text-brand-gold font-medium">¿Cómo funciona?</a>
-      <a href="#entregas" class="mobile-nav-link block py-2 text-sm text-gray-200 hover:text-brand-gold font-medium">Envíos & Entregas</a>
+      <a href="#entregas" class="mobile-nav-link block py-2 text-sm text-gray-200 hover:text-brand-gold font-medium">Envíos &amp; Entregas</a>
       <div class="pt-2 border-t border-white/10 grid grid-cols-2 gap-2">
-        <a href="https://wa.me/56934040525?text=%C2%A1Hola%20Scent%20Lab%20Chile!%20%F0%9F%91%8B%20Quisiera%20consultar%20por%20decants." target="_blank" rel="noopener" class="py-2.5 rounded-xl gold-button font-bold text-xs text-center uppercase tracking-wider">WhatsApp</a>
-        <a href="https://www.instagram.com/scentlabdecants.cl/" target="_blank" rel="noopener" class="py-2.5 rounded-xl ig-button font-bold text-xs text-center uppercase tracking-wider">Instagram</a>
+        <a href="https://wa.me/56934040525?text=%C2%A1Hola%20Scent%20Lab%20Chile!%20Quisiera%20consultar%20por%20decants." target="_blank" rel="noopener noreferrer" class="py-2.5 rounded-xl gold-button font-bold text-xs text-center uppercase tracking-wider">WhatsApp</a>
+        <a href="https://www.instagram.com/scentlabdecants.cl/" target="_blank" rel="noopener noreferrer" class="py-2.5 rounded-xl ig-button font-bold text-xs text-center uppercase tracking-wider">Instagram</a>
       </div>
     </div>
   </header>
 
-  <main class="flex-grow">
-    
+  <main id="inicio" class="flex-grow">
+
     <!-- =========================================================================
          2. HERO SECTION
          ========================================================================= -->
@@ -148,9 +164,10 @@
           <span class="w-2 h-2 rounded-full bg-brand-gold animate-pulse"></span>
           Fragancias 100% Originales Decantadas
         </span>
-        
+
         <h1 class="font-serif text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-wide max-w-4xl mx-auto leading-tight">
-          Prueba el lujo antes de comprar el frasco completo. <span class="gold-gradient-text block mt-2">Decants de Colección</span>
+          Prueba el lujo antes de comprar el frasco completo.
+          <span class="gold-gradient-text block mt-2">Decants de Colección</span>
         </h1>
 
         <p class="mt-6 text-gray-400 text-base sm:text-lg max-w-2xl mx-auto font-light leading-relaxed">
@@ -161,15 +178,15 @@
           <a href="#catalogo" class="w-full sm:w-auto px-8 py-3.5 rounded-full gold-button font-bold text-xs sm:text-sm tracking-widest uppercase">
             Ver Catálogo Disponible
           </a>
-          <a href="https://wa.me/56934040525?text=%C2%A1Hola%20Scent%20Lab%20Chile!%20Quisiera%20hacer%20una%20consulta%20sobre%20sus%20decants." target="_blank" rel="noopener" class="w-full sm:w-auto px-7 py-3.5 rounded-full border border-white/20 hover:border-brand-gold/60 text-white font-semibold text-xs sm:text-sm tracking-wider uppercase transition-all hover:bg-white/5">
+          <a href="https://wa.me/56934040525?text=%C2%A1Hola%20Scent%20Lab%20Chile!%20Quisiera%20hacer%20una%20consulta%20sobre%20sus%20decants." target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-7 py-3.5 rounded-full border border-white/20 hover:border-brand-gold/60 text-white font-semibold text-xs sm:text-sm tracking-wider uppercase transition-all hover:bg-white/5">
             Pedir por WhatsApp
           </a>
-          <a href="https://www.instagram.com/scentlabdecants.cl/" target="_blank" rel="noopener" class="w-full sm:w-auto px-7 py-3.5 rounded-full ig-button font-semibold text-xs sm:text-sm tracking-wider uppercase">
+          <a href="https://www.instagram.com/scentlabdecants.cl/" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-7 py-3.5 rounded-full ig-button font-semibold text-xs sm:text-sm tracking-wider uppercase">
             Encargar por Instagram
           </a>
         </div>
 
-        <!-- Badges de Garantía -->
+        <!-- Garantías -->
         <div class="mt-12 pt-8 border-t border-white/5 grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
           <div class="p-3">
             <span class="block text-brand-gold text-xl font-bold font-serif">100% Original</span>
@@ -184,7 +201,7 @@
             <span class="text-xs text-gray-400">En Talagante y Metro Línea 1</span>
           </div>
           <div class="p-3">
-            <span class="block text-brand-gold text-xl font-bold font-serif">Envíos & Entregas</span>
+            <span class="block text-brand-gold text-xl font-bold font-serif">Envíos &amp; Entregas</span>
             <span class="text-xs text-gray-400">Por WhatsApp o Instagram DM</span>
           </div>
         </div>
@@ -192,10 +209,9 @@
     </section>
 
     <!-- =========================================================================
-         3. FILTROS Y BÚSQUEDA
+         3. CATÁLOGO, BUSCADOR Y FILTROS
          ========================================================================= -->
     <section id="catalogo" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      
       <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-8">
         <div>
           <h2 class="font-serif text-2xl sm:text-3xl font-bold text-white tracking-wide">Nuestro Catálogo</h2>
@@ -204,55 +220,66 @@
 
         <!-- Buscador -->
         <div class="relative w-full md:w-80">
-          <input type="text" id="search-input" placeholder="Buscar perfume, marca o notas..." class="w-full bg-brand-card border border-white/10 rounded-full py-2.5 pl-10 pr-9 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-brand-gold transition-colors">
-          <svg class="w-4 h-4 text-gray-400 absolute left-3.5 top-1/2 -translate-y-1/2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <input
+            type="text"
+            id="search-input"
+            placeholder="Buscar perfume, marca o notas..."
+            class="w-full bg-brand-card border border-white/10 rounded-full py-2.5 pl-10 pr-9 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-brand-gold transition-colors"
+          >
+          <svg class="w-4 h-4 text-gray-400 absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
           </svg>
-          <button id="clear-search-btn" type="button" class="hidden absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-white p-1" title="Limpiar búsqueda">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+          <button
+            id="clear-search-btn"
+            type="button"
+            class="hidden absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-white p-1 cursor-pointer"
+            title="Limpiar búsqueda"
+            aria-label="Limpiar búsqueda"
+          >
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+            </svg>
           </button>
         </div>
       </div>
 
       <!-- Filtros por Categoría -->
       <div class="flex items-center gap-2 overflow-x-auto pb-4 no-scrollbar border-b border-white/10 mb-8" id="category-filters">
-        <button type="button" data-category="Todos" class="filter-btn active px-5 py-2 rounded-full text-xs font-semibold tracking-wider uppercase transition-all bg-brand-gold text-black whitespace-nowrap">
+        <button type="button" data-category="Todos" class="filter-btn px-5 py-2 rounded-full text-xs font-semibold tracking-wider uppercase transition-all bg-brand-gold text-black whitespace-nowrap cursor-pointer">
           Todos
         </button>
-        <button type="button" data-category="Árabes" class="filter-btn px-5 py-2 rounded-full text-xs font-semibold tracking-wider uppercase transition-all border border-white/10 text-gray-300 hover:border-brand-gold/50 whitespace-nowrap">
+        <button type="button" data-category="Árabes" class="filter-btn px-5 py-2 rounded-full text-xs font-semibold tracking-wider uppercase transition-all border border-white/10 text-gray-300 hover:border-brand-gold/50 whitespace-nowrap cursor-pointer">
           Árabes
         </button>
-        <button type="button" data-category="Diseñador" class="filter-btn px-5 py-2 rounded-full text-xs font-semibold tracking-wider uppercase transition-all border border-white/10 text-gray-300 hover:border-brand-gold/50 whitespace-nowrap">
+        <button type="button" data-category="Diseñador" class="filter-btn px-5 py-2 rounded-full text-xs font-semibold tracking-wider uppercase transition-all border border-white/10 text-gray-300 hover:border-brand-gold/50 whitespace-nowrap cursor-pointer">
           Diseñador
         </button>
-        <button type="button" data-category="Frescos / Diario" class="filter-btn px-5 py-2 rounded-full text-xs font-semibold tracking-wider uppercase transition-all border border-white/10 text-gray-300 hover:border-brand-gold/50 whitespace-nowrap">
+        <button type="button" data-category="Frescos / Diario" class="filter-btn px-5 py-2 rounded-full text-xs font-semibold tracking-wider uppercase transition-all border border-white/10 text-gray-300 hover:border-brand-gold/50 whitespace-nowrap cursor-pointer">
           Frescos / Diario
         </button>
-        <button type="button" data-category="Dulces / Noche" class="filter-btn px-5 py-2 rounded-full text-xs font-semibold tracking-wider uppercase transition-all border border-white/10 text-gray-300 hover:border-brand-gold/50 whitespace-nowrap">
+        <button type="button" data-category="Dulces / Noche" class="filter-btn px-5 py-2 rounded-full text-xs font-semibold tracking-wider uppercase transition-all border border-white/10 text-gray-300 hover:border-brand-gold/50 whitespace-nowrap cursor-pointer">
           Dulces / Noche
         </button>
       </div>
 
-      <!-- =========================================================================
-           4. GRID DE PRODUCTOS
-           ========================================================================= -->
-      <div id="perfumes-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- Renderizado dinámico desde app.js -->
-      </div>
+      <!-- Grid de Productos -->
+      <div id="perfumes-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
 
       <!-- Sin resultados -->
       <div id="no-results" class="hidden text-center py-16">
-        <svg class="w-12 h-12 text-gray-600 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.172 9.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        <svg class="w-12 h-12 text-gray-600 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.172 9.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+        </svg>
         <h3 class="text-lg font-semibold text-white">No encontramos perfumes con esa búsqueda</h3>
         <p class="text-sm text-gray-400 mt-1 mb-5">Intenta buscar otra marca o limpia los filtros activos.</p>
-        <button id="reset-filters-btn" type="button" class="px-6 py-2.5 rounded-full gold-button font-bold text-xs uppercase tracking-wider">
+        <button id="reset-filters-btn" type="button" class="px-6 py-2.5 rounded-full gold-button font-bold text-xs uppercase tracking-wider cursor-pointer">
           Mostrar todos los perfumes
         </button>
       </div>
     </section>
 
     <!-- =========================================================================
-         5. SECCIÓN ¿CÓMO FUNCIONA?
+         4. ¿CÓMO FUNCIONA?
          ========================================================================= -->
     <section id="como-funciona" class="bg-brand-card py-16 border-y border-white/5">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -262,21 +289,21 @@
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div class="bg-brand-black p-6 rounded-2xl border border-white/5 text-center relative">
+          <div class="bg-brand-black p-6 rounded-2xl border border-white/5 text-center">
             <div class="w-12 h-12 rounded-full bg-brand-gold/10 text-brand-gold border border-brand-gold/30 font-serif font-bold text-lg flex items-center justify-center mx-auto mb-4">1</div>
             <h3 class="text-white font-semibold mb-2">Frasco Original Sellado</h3>
             <p class="text-xs text-gray-400 leading-relaxed">Extraemos el líquido directamente desde la botella original conservando la fragancia 100% pura e intacta.</p>
           </div>
 
-          <div class="bg-brand-black p-6 rounded-2xl border border-white/5 text-center relative">
+          <div class="bg-brand-black p-6 rounded-2xl border border-white/5 text-center">
             <div class="w-12 h-12 rounded-full bg-brand-gold/10 text-brand-gold border border-brand-gold/30 font-serif font-bold text-lg flex items-center justify-center mx-auto mb-4">2</div>
             <h3 class="text-white font-semibold mb-2">Envase de Vidrio + Spray</h3>
             <p class="text-xs text-gray-400 leading-relaxed">Envasamos en frascos de vidrio reforzado con atomizadores de excelente pulverización y etiqueta identificadora.</p>
           </div>
 
-          <div class="bg-brand-black p-6 rounded-2xl border border-white/5 text-center relative">
+          <div class="bg-brand-black p-6 rounded-2xl border border-white/5 text-center">
             <div class="w-12 h-12 rounded-full bg-brand-gold/10 text-brand-gold border border-brand-gold/30 font-serif font-bold text-lg flex items-center justify-center mx-auto mb-4">3</div>
-            <h3 class="text-white font-semibold mb-2">Entregas & Envíos</h3>
+            <h3 class="text-white font-semibold mb-2">Entregas &amp; Envíos</h3>
             <p class="text-xs text-gray-400 leading-relaxed">Entregas sin costo ($0) en <strong>Talagante y Metro Línea 1</strong>. Envíos a todo Chile por pagar (Starken / Bluexpress).</p>
           </div>
         </div>
@@ -284,34 +311,40 @@
     </section>
 
     <!-- =========================================================================
-         6. SECCIÓN DE ENTREGAS Y PAGOS
+         5. ENTREGAS Y PAGOS
          ========================================================================= -->
     <section id="entregas" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
         <div class="bg-gradient-to-br from-brand-card to-brand-black p-8 rounded-2xl border border-brand-gold/20">
-          <span class="text-xs font-semibold text-brand-gold uppercase tracking-wider block mb-2">Puntos de Entrega & Envíos</span>
+          <span class="text-xs font-semibold text-brand-gold uppercase tracking-wider block mb-2">Puntos de Entrega &amp; Envíos</span>
           <h3 class="font-serif text-2xl font-bold text-white mb-4">Coordinación directa por WhatsApp o Instagram</h3>
-          
+
           <ul class="space-y-4 text-sm text-gray-300 mb-6">
             <li class="flex items-start gap-3">
-              <svg class="w-5 h-5 text-brand-gold shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              <svg class="w-5 h-5 text-brand-gold shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
               <span><strong>Entregas Presenciales Sin Costo ($0):</strong> En la comuna de <strong>Talagante</strong> y en todas las estaciones de <strong>Metro Línea 1</strong>.</span>
             </li>
             <li class="flex items-start gap-3">
-              <svg class="w-5 h-5 text-brand-gold shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              <svg class="w-5 h-5 text-brand-gold shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
               <span><strong>Otras Entregas o Envíos a Chile:</strong> Puntos a convenir o despachos por pagar mediante Starken o Bluexpress.</span>
             </li>
             <li class="flex items-start gap-3">
-              <svg class="w-5 h-5 text-brand-gold shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              <svg class="w-5 h-5 text-brand-gold shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
               <span><strong>Medios de Pago:</strong> Transferencia electrónica directa a CuentaRUT.</span>
             </li>
           </ul>
 
           <div class="flex flex-col sm:flex-row gap-3">
-            <a href="https://wa.me/56934040525?text=%C2%A1Hola!%20Quisiera%20coordinar%20un%20pedido%20de%20decants%20(Talagante%20/%20Metro%20L1)." target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full gold-button font-bold text-xs tracking-wider uppercase">
+            <a href="https://wa.me/56934040525?text=%C2%A1Hola!%20Quisiera%20coordinar%20un%20pedido%20de%20decants%20(Talagante%20/%20Metro%20L1)." target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full gold-button font-bold text-xs tracking-wider uppercase">
               Pedir por WhatsApp
             </a>
-            <a href="https://www.instagram.com/scentlabdecants.cl/" target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full ig-button font-bold text-xs tracking-wider uppercase">
+            <a href="https://www.instagram.com/scentlabdecants.cl/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full ig-button font-bold text-xs tracking-wider uppercase">
               Encargar por Instagram
             </a>
           </div>
@@ -343,7 +376,7 @@
   </main>
 
   <!-- =========================================================================
-       7. FOOTER ELEGANTE
+       6. FOOTER
        ========================================================================= -->
   <footer class="bg-black border-t border-white/10 py-10">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
@@ -358,9 +391,9 @@
       </div>
 
       <div class="text-xs text-gray-400 text-center flex flex-wrap justify-center gap-2">
-        <span>Instagram: <a href="https://www.instagram.com/scentlabdecants.cl/" target="_blank" rel="noopener" class="text-pink-400 hover:underline">@scentlabdecants.cl</a></span>
+        <span>Instagram: <a href="https://www.instagram.com/scentlabdecants.cl/" target="_blank" rel="noopener noreferrer" class="text-pink-400 hover:underline">@scentlabdecants.cl</a></span>
         <span>•</span>
-        <span>WhatsApp: <a href="https://wa.me/56934040525" target="_blank" rel="noopener" class="text-brand-gold hover:underline">+56 9 3404 0525</a></span>
+        <span>WhatsApp: <a href="https://wa.me/56934040525" target="_blank" rel="noopener noreferrer" class="text-brand-gold hover:underline">+56 9 3404 0525</a></span>
       </div>
 
       <div class="text-xs text-gray-600">
@@ -370,24 +403,22 @@
   </footer>
 
   <!-- =========================================================================
-       8. MODAL DE DETALLE DEL PERFUME
+       7. MODAL DE DETALLE DEL PERFUME (Siempre hidden cuando está cerrado)
        ========================================================================= -->
-  <div id="product-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4">
+  <div id="product-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4" role="dialog" aria-modal="true" aria-label="Detalle del perfume">
     <div id="modal-backdrop" class="absolute inset-0 bg-black/80 backdrop-blur-sm"></div>
-    <div id="modal-content" class="relative bg-brand-card border border-white/15 rounded-2xl max-w-2xl w-full overflow-hidden shadow-2xl z-10 max-h-[90vh] overflow-y-auto">
-      <!-- Renderizado dinámico -->
-    </div>
+    <div id="modal-content" class="relative bg-brand-card border border-white/15 rounded-2xl max-w-2xl w-full overflow-hidden shadow-2xl z-10 max-h-[90vh] overflow-y-auto"></div>
   </div>
 
   <!-- =========================================================================
-       9. CARRITO / LISTA DE SELECCIÓN DRAWER
+       8. CARRITO / LISTA DE PEDIDO (Siempre hidden cuando está cerrado)
        ========================================================================= -->
-  <div id="cart-drawer" class="fixed inset-0 z-50 pointer-events-none transition-opacity duration-300 opacity-0">
-    <div id="cart-backdrop" class="absolute inset-0 bg-black/70 backdrop-blur-sm pointer-events-auto"></div>
+  <div id="cart-drawer" class="fixed inset-0 z-50 hidden" role="dialog" aria-modal="true" aria-label="Mi lista de decants">
+    <div id="cart-backdrop" class="absolute inset-0 bg-black/70 backdrop-blur-sm"></div>
 
     <div class="absolute inset-y-0 right-0 max-w-full flex pl-10">
-      <div class="w-screen max-w-md bg-brand-card border-l border-white/10 p-6 flex flex-col justify-between pointer-events-auto shadow-2xl">
-        
+      <div class="w-screen max-w-md bg-brand-card border-l border-white/10 p-6 flex flex-col justify-between shadow-2xl relative z-10">
+
         <div class="flex flex-col overflow-hidden">
           <div class="flex items-center justify-between pb-4 border-b border-white/10">
             <h3 class="font-serif text-lg sm:text-xl font-bold text-white flex items-center gap-2">
@@ -395,20 +426,19 @@
               <span id="cart-count-title" class="text-xs font-normal text-brand-gold">(0)</span>
             </h3>
             <div class="flex items-center gap-2">
-              <button id="cart-clear-btn" type="button" class="text-[11px] text-gray-400 hover:text-red-400 underline hidden">Vaciar</button>
-              <button id="cart-close-btn" type="button" class="text-gray-400 hover:text-white p-1" aria-label="Cerrar lista">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+              <button id="cart-clear-btn" type="button" class="text-[11px] text-gray-400 hover:text-red-400 underline hidden cursor-pointer">Vaciar</button>
+              <button id="cart-close-btn" type="button" class="text-gray-400 hover:text-white p-1 cursor-pointer" aria-label="Cerrar lista">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
               </button>
             </div>
           </div>
 
-          <div id="cart-items-container" class="mt-4 space-y-3 overflow-y-auto pr-1 flex-grow max-h-[45vh]">
-            <!-- Items agregados -->
-          </div>
+          <div id="cart-items-container" class="mt-4 space-y-3 overflow-y-auto pr-1 flex-grow max-h-[45vh]"></div>
         </div>
 
         <div class="pt-4 border-t border-white/10 space-y-3">
-          <!-- Selector de entrega dentro del carrito -->
           <div>
             <label for="delivery-select" class="text-[11px] text-gray-400 uppercase tracking-wider block mb-1.5 font-semibold">Método de entrega:</label>
             <select id="delivery-select" class="w-full bg-brand-black border border-white/15 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-brand-gold">
@@ -423,13 +453,17 @@
             <span id="cart-total-price" class="font-serif text-xl font-bold text-brand-gold">$0</span>
           </div>
 
-          <a id="cart-checkout-btn" href="https://wa.me/56934040525" target="_blank" rel="noopener" class="w-full py-3 rounded-full gold-button font-bold text-xs tracking-wider uppercase flex items-center justify-center gap-2">
-            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+          <a id="cart-checkout-btn" href="https://wa.me/56934040525" target="_blank" rel="noopener noreferrer" class="w-full py-3 rounded-full gold-button font-bold text-xs tracking-wider uppercase flex items-center justify-center gap-2">
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
+            </svg>
             Enviar lista por WhatsApp
           </a>
 
-          <a id="cart-ig-checkout-btn" href="https://www.instagram.com/scentlabdecants.cl/" target="_blank" rel="noopener" class="w-full py-3 rounded-full ig-button font-bold text-xs tracking-wider uppercase flex items-center justify-center gap-2">
-            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          <a id="cart-ig-checkout-btn" href="https://www.instagram.com/scentlabdecants.cl/" target="_blank" rel="noopener noreferrer" class="w-full py-3 rounded-full ig-button font-bold text-xs tracking-wider uppercase flex items-center justify-center gap-2">
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            </svg>
             Encargar lista por Instagram
           </a>
           <p class="text-[10px] text-center text-gray-500">Al encargar por Instagram se copia tu pedido listo para pegar en DM.</p>
@@ -441,19 +475,28 @@
 
   <!-- Toast Notification -->
   <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-24 opacity-0 transition-all duration-300 bg-brand-gold text-black px-5 py-3 rounded-full font-semibold text-xs shadow-xl flex items-center gap-2 pointer-events-none max-w-[90vw]">
-    <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+    <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/>
+    </svg>
     <span id="toast-msg">Agregado a tu lista</span>
   </div>
 
   <!-- Botón Flotante de WhatsApp -->
-  <a href="https://wa.me/56934040525?text=%C2%A1Hola%20Scent%20Lab%20Chile!%20%F0%9F%91%8B%20Vengo%20desde%20el%20cat%C3%A1logo%20web." target="_blank" rel="noopener" class="fixed bottom-6 left-6 z-40 bg-emerald-500 hover:bg-emerald-600 text-white p-3.5 rounded-full shadow-2xl transition-transform hover:scale-110 flex items-center justify-center group" title="WhatsApp Scent Lab Chile">
-    <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+  <a
+    href="https://wa.me/56934040525?text=%C2%A1Hola%20Scent%20Lab%20Chile!%20Vengo%20desde%20el%20cat%C3%A1logo%20web."
+    target="_blank"
+    rel="noopener noreferrer"
+    class="fixed bottom-6 left-6 z-40 bg-emerald-500 hover:bg-emerald-600 text-white p-3.5 rounded-full shadow-2xl transition-transform hover:scale-110 flex items-center justify-center group"
+    title="WhatsApp Scent Lab Chile"
+    aria-label="Contactar por WhatsApp"
+  >
+    <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24" aria-hidden="true">
       <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
     </svg>
     <span class="max-w-0 overflow-hidden whitespace-nowrap group-hover:max-w-xs transition-all duration-300 text-xs font-bold uppercase tracking-wider group-hover:ml-2">WhatsApp</span>
   </a>
 
-  <!-- Lógica y Base de Datos -->
-  <script src="app.js?v=4"></script>
+  <!-- Lógica y Catálogo -->
+  <script src="app.js?v=10"></script>
 </body>
 </html>

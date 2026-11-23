@@ -2,64 +2,73 @@
    SCENT LAB CHILE - ESTILOS PERSONALIZADOS
    ========================================================================= */
 
-body {
-  background-color: #0b0b0d;
-  color: #e5e7eb;
-  font-family: 'Plus Jakarta Sans', sans-serif;
+:root {
+  --brand-black: #0b0b0d;
+  --brand-card: #141418;
+  --brand-gold: #d4af37;
+  --brand-gold-light: #f3e5ab;
+  --brand-gold-dark: #996515;
 }
 
+html {
+  background-color: var(--brand-black);
+  color: #ffffff;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+body {
+  background-color: var(--brand-black);
+  color: #ffffff;
+  overflow-x: hidden;
+}
+
+/* Texto con degradado dorado */
 .gold-gradient-text {
-  background: linear-gradient(135deg, #fff2a3 0%, #d4af37 50%, #aa7c11 100%);
+  background: linear-gradient(135deg, #fff2a3 0%, #d4af37 45%, #aa7c11 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
+/* Botón principal dorado */
 .gold-button {
-  background: linear-gradient(135deg, #d4af37 0%, #b8860b 100%);
-  color: #000;
-  transition: all 0.25s ease;
+  background: linear-gradient(135deg, #f3e5ab 0%, #d4af37 50%, #b8860b 100%);
+  color: #0b0b0d;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
 }
 
 .gold-button:hover {
-  background: linear-gradient(135deg, #e5be38 0%, #d4af37 100%);
-  box-shadow: 0 0 20px rgba(212, 175, 55, 0.35);
+  filter: brightness(1.06);
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.35);
   transform: translateY(-1px);
 }
 
+.gold-button:active {
+  transform: translateY(0);
+}
+
+/* Botón Instagram */
 .ig-button {
-  background: linear-gradient(135deg, rgba(225, 48, 108, 0.16) 0%, rgba(131, 58, 180, 0.16) 100%);
-  border: 1px solid rgba(225, 48, 108, 0.45);
-  color: #f9a8d4;
-  transition: all 0.25s ease;
+  background: linear-gradient(135deg, #833ab4 0%, #c13584 50%, #e1306c 100%);
+  color: #ffffff;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
 }
 
 .ig-button:hover {
-  background: linear-gradient(135deg, #e1306c 0%, #833ab4 100%);
-  border-color: transparent;
-  color: #ffffff;
-  box-shadow: 0 0 18px rgba(225, 48, 108, 0.35);
+  filter: brightness(1.08);
+  box-shadow: 0 6px 20px rgba(225, 48, 108, 0.35);
   transform: translateY(-1px);
 }
 
-/* Scrollbar personalizada */
-::-webkit-scrollbar {
-  width: 8px;
+.ig-button:active {
+  transform: translateY(0);
 }
 
-::-webkit-scrollbar-track {
-  background: #0b0b0d;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #27272a;
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #d4af37;
-}
-
-/* Ocultar scrollbar horizontal en filtros móviles */
+/* Ocultar barra de scroll en filtros horizontales */
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
@@ -67,4 +76,23 @@ body {
 .no-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+
+/* Scrollbar sutil en escritorios */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0b0b0d;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #27272f;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #d4af37;
 }
