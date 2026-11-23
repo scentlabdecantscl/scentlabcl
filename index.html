@@ -1,0 +1,1190 @@
+<!DOCTYPE html>
+<html lang="es" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scent Lab Chile | Catálogo de Decants de Perfumes Originales</title>
+  
+  <!-- SEO & Social Meta Tags -->
+  <meta name="description" content="Decants de perfumes 100% originales en Chile. Formatos de 3ml, 5ml y 10ml. Entregas sin costo en Talagante y Metro Línea 1.">
+  <meta property="og:title" content="Scent Lab Chile - Decants de Perfumería de Lujo">
+  <meta property="og:description" content="Descubre fragancias exclusivas en formatos decant de 3ml, 5ml y 10ml. 100% originales.">
+  <meta property="og:type" content="website">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              black: '#0b0b0d',
+              card: '#141418',
+              cardHover: '#1c1c24',
+              gold: '#d4af37',
+              goldLight: '#f3e5ab',
+              goldDark: '#996515',
+              grayMuted: '#9aa0a6'
+            }
+          },
+          fontFamily: {
+            serif: ['Cinzel', 'Georgia', 'serif'],
+            sans: ['Plus Jakarta Sans', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Estilos personalizados -->
+  <style>
+    body {
+      background-color: #0b0b0d;
+      color: #e5e7eb;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    
+    .gold-gradient-text {
+      background: linear-gradient(135deg, #fff2a3 0%, #d4af37 50%, #aa7c11 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .gold-button {
+      background: linear-gradient(135deg, #d4af37 0%, #b8860b 100%);
+      color: #000;
+      transition: all 0.25s ease;
+    }
+
+    .gold-button:hover {
+      background: linear-gradient(135deg, #e5be38 0%, #d4af37 100%);
+      box-shadow: 0 0 20px rgba(212, 175, 55, 0.35);
+      transform: translateY(-1px);
+    }
+
+    .ig-button {
+      background: linear-gradient(135deg, rgba(225, 48, 108, 0.16) 0%, rgba(131, 58, 180, 0.16) 100%);
+      border: 1px solid rgba(225, 48, 108, 0.45);
+      color: #f9a8d4;
+      transition: all 0.25s ease;
+    }
+
+    .ig-button:hover {
+      background: linear-gradient(135deg, #e1306c 0%, #833ab4 100%);
+      border-color: transparent;
+      color: #ffffff;
+      box-shadow: 0 0 18px rgba(225, 48, 108, 0.35);
+      transform: translateY(-1px);
+    }
+
+    /* Scrollbar personalizada */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0b0b0d;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #27272a;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #d4af37;
+    }
+
+    /* Ocultar scrollbar horizontal en filtros móviles */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between selection:bg-brand-gold selection:text-black">
+
+  <!-- =========================================================================
+       1. HEADER STICKY CON LOGO, NAVEGACIÓN Y MENÚ MÓVIL
+       ========================================================================= -->
+  <header class="sticky top-0 z-40 bg-brand-black/90 backdrop-blur-md border-b border-white/10 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Logo e Identidad -->
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="relative w-11 h-11 rounded-full border border-brand-gold/60 flex items-center justify-center bg-brand-card overflow-hidden group-hover:border-brand-gold transition-colors shadow-[0_0_15px_rgba(212,175,55,0.2)]">
+          <img 
+            src="logo.png" 
+            alt="Scent Lab Chile Logo" 
+            class="w-full h-full object-cover rounded-full" 
+            onerror="this.style.display='none'; document.getElementById('logo-fallback-icon').classList.remove('hidden');"
+          />
+          <div id="logo-fallback-icon" class="hidden w-full h-full flex items-center justify-center bg-gradient-to-br from-brand-card to-black">
+            <svg class="w-6 h-6 text-brand-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M12 2L15 8L21 9L16.5 13.5L18 19.5L12 16.5L6 19.5L7.5 13.5L3 9L9 8L12 2Z" fill="url(#goldGradient)" stroke="none" />
+              <defs>
+                <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#fff2a3" />
+                  <stop offset="50%" stop-color="#d4af37" />
+                  <stop offset="100%" stop-color="#aa7c11" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+        </div>
+        <div>
+          <span class="font-serif text-lg sm:text-xl font-bold tracking-widest text-white block leading-none">SCENT LAB</span>
+          <span class="text-[10px] tracking-[0.25em] text-brand-gold uppercase block mt-1">Chile • Decants</span>
+        </div>
+      </a>
+
+      <!-- Navegación Escritorio -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-300">
+        <a href="#catalogo" class="hover:text-brand-gold transition-colors">Catálogo</a>
+        <a href="#como-funciona" class="hover:text-brand-gold transition-colors">¿Cómo funciona?</a>
+        <a href="#entregas" class="hover:text-brand-gold transition-colors">Envíos & Entregas</a>
+      </nav>
+
+      <!-- Botones de Acción -->
+      <div class="flex items-center gap-2 sm:gap-3">
+        <!-- Instagram -->
+        <a href="https://www.instagram.com/scentlabdecants.cl/" target="_blank" rel="noopener" class="p-2.5 rounded-full border border-white/10 hover:border-pink-500/60 text-gray-300 hover:text-pink-400 transition-colors" title="Instagram @scentlabdecants.cl">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+          </svg>
+        </a>
+
+        <!-- Toggle Lista/Carrito -->
+        <button id="cart-toggle-btn" class="relative p-2.5 rounded-full border border-white/10 hover:border-brand-gold/60 text-gray-300 hover:text-brand-gold transition-colors" title="Mi Lista de Decants">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+          </svg>
+          <span id="cart-badge" class="absolute -top-1 -right-1 bg-brand-gold text-black text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center opacity-0 transition-opacity">0</span>
+        </button>
+
+        <!-- Botón Contacto WhatsApp -->
+        <a href="https://wa.me/56934040525?text=%C2%A1Hola%20Scent%20Lab%20Chile!%20%F0%9F%91%8B%20Quisiera%20consultar%20por%20decants%20disponibles." target="_blank" rel="noopener" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-full gold-button font-semibold text-xs tracking-wider uppercase shadow-md">
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
+          </svg>
+          WhatsApp
+        </a>
+
+        <!-- Botón Menú Móvil -->
+        <button id="mobile-menu-btn" class="md:hidden p-2.5 rounded-full border border-white/10 text-gray-300 hover:text-brand-gold transition-colors" aria-label="Abrir menú">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Menú Desplegable Móvil -->
+    <div id="mobile-menu" class="hidden md:hidden bg-brand-card border-b border-white/10 px-4 py-4 space-y-3">
+      <a href="#catalogo" class="mobile-nav-link block py-2 text-sm text-gray-200 hover:text-brand-gold font-medium">Catálogo</a>
+      <a href="#como-funciona" class="mobile-nav-link block py-2 text-sm text-gray-200 hover:text-brand-gold font-medium">¿Cómo funciona?</a>
+      <a href="#entregas" class="mobile-nav-link block py-2 text-sm text-gray-200 hover:text-brand-gold font-medium">Envíos & Entregas</a>
+      <div class="pt-2 border-t border-white/10 grid grid-cols-2 gap-2">
+        <a href="https://wa.me/56934040525?text=%C2%A1Hola%20Scent%20Lab%20Chile!%20%F0%9F%91%8B%20Quisiera%20consultar%20por%20decants." target="_blank" rel="noopener" class="py-2.5 rounded-xl gold-button font-bold text-xs text-center uppercase tracking-wider">WhatsApp</a>
+        <a href="https://www.instagram.com/scentlabdecants.cl/" target="_blank" rel="noopener" class="py-2.5 rounded-xl ig-button font-bold text-xs text-center uppercase tracking-wider">Instagram</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="flex-grow">
+    
+    <!-- =========================================================================
+         2. HERO SECTION
+         ========================================================================= -->
+    <section class="relative py-16 lg:py-24 overflow-hidden border-b border-white/5">
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] bg-brand-gold/10 blur-[120px] rounded-full pointer-events-none"></div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+        <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-brand-gold/40 bg-brand-gold/5 text-brand-gold text-xs font-semibold tracking-wider uppercase mb-6">
+          <span class="w-2 h-2 rounded-full bg-brand-gold animate-pulse"></span>
+          Fragancias 100% Originales Decantadas
+        </span>
+        
+        <h1 class="font-serif text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-wide max-w-4xl mx-auto leading-tight">
+          Prueba el lujo antes de comprar el frasco completo. <span class="gold-gradient-text block mt-2">Decants de Colección</span>
+        </h1>
+
+        <p class="mt-6 text-gray-400 text-base sm:text-lg max-w-2xl mx-auto font-light leading-relaxed">
+          Explora fragancias de diseñador y árabes en frascos de vidrio sellados con atomizador de alta precisión en <strong class="text-white font-medium">3 ml, 5 ml y 10 ml</strong>.
+        </p>
+
+        <div class="mt-8 flex flex-col sm:flex-row gap-3.5 justify-center items-center">
+          <a href="#catalogo" class="w-full sm:w-auto px-8 py-3.5 rounded-full gold-button font-bold text-xs sm:text-sm tracking-widest uppercase">
+            Ver Catálogo Disponible
+          </a>
+          <a href="https://wa.me/56934040525?text=%C2%A1Hola%20Scent%20Lab%20Chile!%20Quisiera%20hacer%20una%20consulta%20sobre%20sus%20decants." target="_blank" rel="noopener" class="w-full sm:w-auto px-7 py-3.5 rounded-full border border-white/20 hover:border-brand-gold/60 text-white font-semibold text-xs sm:text-sm tracking-wider uppercase transition-all hover:bg-white/5">
+            Pedir por WhatsApp
+          </a>
+          <a href="https://www.instagram.com/scentlabdecants.cl/" target="_blank" rel="noopener" class="w-full sm:w-auto px-7 py-3.5 rounded-full ig-button font-semibold text-xs sm:text-sm tracking-wider uppercase">
+            Encargar por Instagram
+          </a>
+        </div>
+
+        <!-- Badges de Garantía -->
+        <div class="mt-12 pt-8 border-t border-white/5 grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+          <div class="p-3">
+            <span class="block text-brand-gold text-xl font-bold font-serif">100% Original</span>
+            <span class="text-xs text-gray-400">Extracción directa de frascos sellados</span>
+          </div>
+          <div class="p-3">
+            <span class="block text-brand-gold text-xl font-bold font-serif">Vidrio Premium</span>
+            <span class="text-xs text-gray-400">Atomizador spray de alta pulverización</span>
+          </div>
+          <div class="p-3">
+            <span class="block text-brand-gold text-xl font-bold font-serif">Sin Costo ($0)</span>
+            <span class="text-xs text-gray-400">En Talagante y Metro Línea 1</span>
+          </div>
+          <div class="p-3">
+            <span class="block text-brand-gold text-xl font-bold font-serif">Envíos & Entregas</span>
+            <span class="text-xs text-gray-400">Por WhatsApp o Instagram DM</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         3. FILTROS Y BÚSQUEDA
+         ========================================================================= -->
+    <section id="catalogo" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-8">
+        <div>
+          <h2 class="font-serif text-2xl sm:text-3xl font-bold text-white tracking-wide">Nuestro Catálogo</h2>
+          <p class="text-xs sm:text-sm text-gray-400 mt-1">Selecciona el tamaño (3 ml, 5 ml o 10 ml) y encarga directo por WhatsApp o Instagram.</p>
+        </div>
+
+        <!-- Buscador -->
+        <div class="relative w-full md:w-80">
+          <input type="text" id="search-input" placeholder="Buscar perfume, marca o notas..." class="w-full bg-brand-card border border-white/10 rounded-full py-2.5 pl-10 pr-9 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-brand-gold transition-colors">
+          <svg class="w-4 h-4 text-gray-400 absolute left-3.5 top-1/2 -translate-y-1/2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+          </svg>
+          <button id="clear-search-btn" class="hidden absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-white p-1" title="Limpiar búsqueda">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Filtros por Categoría -->
+      <div class="flex items-center gap-2 overflow-x-auto pb-4 no-scrollbar border-b border-white/10 mb-8" id="category-filters">
+        <button data-category="Todos" class="filter-btn active px-5 py-2 rounded-full text-xs font-semibold tracking-wider uppercase transition-all bg-brand-gold text-black whitespace-nowrap">
+          Todos
+        </button>
+        <button data-category="Árabes" class="filter-btn px-5 py-2 rounded-full text-xs font-semibold tracking-wider uppercase transition-all border border-white/10 text-gray-300 hover:border-brand-gold/50 whitespace-nowrap">
+          Árabes
+        </button>
+        <button data-category="Diseñador" class="filter-btn px-5 py-2 rounded-full text-xs font-semibold tracking-wider uppercase transition-all border border-white/10 text-gray-300 hover:border-brand-gold/50 whitespace-nowrap">
+          Diseñador
+        </button>
+        <button data-category="Frescos / Diario" class="filter-btn px-5 py-2 rounded-full text-xs font-semibold tracking-wider uppercase transition-all border border-white/10 text-gray-300 hover:border-brand-gold/50 whitespace-nowrap">
+          Frescos / Diario
+        </button>
+        <button data-category="Dulces / Noche" class="filter-btn px-5 py-2 rounded-full text-xs font-semibold tracking-wider uppercase transition-all border border-white/10 text-gray-300 hover:border-brand-gold/50 whitespace-nowrap">
+          Dulces / Noche
+        </button>
+      </div>
+
+      <!-- =========================================================================
+           4. GRID DE PRODUCTOS
+           ========================================================================= -->
+      <div id="perfumes-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Renderizado dinámico desde JavaScript -->
+      </div>
+
+      <!-- Sin resultados -->
+      <div id="no-results" class="hidden text-center py-16">
+        <svg class="w-12 h-12 text-gray-600 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.172 9.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        <h3 class="text-lg font-semibold text-white">No encontramos perfumes con esa búsqueda</h3>
+        <p class="text-sm text-gray-400 mt-1 mb-5">Intenta buscar otra marca o limpia los filtros activos.</p>
+        <button id="reset-filters-btn" class="px-6 py-2.5 rounded-full gold-button font-bold text-xs uppercase tracking-wider">
+          Mostrar todos los perfumes
+        </button>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         5. SECCIÓN ¿CÓMO FUNCIONA?
+         ========================================================================= -->
+    <section id="como-funciona" class="bg-brand-card py-16 border-y border-white/5">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+          <h2 class="font-serif text-2xl sm:text-3xl font-bold text-white">¿Cómo funcionan nuestros decants?</h2>
+          <p class="text-sm text-gray-400 mt-2">Garantizamos máxima higiene, fidelidad de aroma y presentación impecable.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="bg-brand-black p-6 rounded-2xl border border-white/5 text-center relative">
+            <div class="w-12 h-12 rounded-full bg-brand-gold/10 text-brand-gold border border-brand-gold/30 font-serif font-bold text-lg flex items-center justify-center mx-auto mb-4">1</div>
+            <h3 class="text-white font-semibold mb-2">Frasco Original Sellado</h3>
+            <p class="text-xs text-gray-400 leading-relaxed">Extraemos el líquido directamente desde la botella original conservando la fragancia 100% pura e intacta.</p>
+          </div>
+
+          <div class="bg-brand-black p-6 rounded-2xl border border-white/5 text-center relative">
+            <div class="w-12 h-12 rounded-full bg-brand-gold/10 text-brand-gold border border-brand-gold/30 font-serif font-bold text-lg flex items-center justify-center mx-auto mb-4">2</div>
+            <h3 class="text-white font-semibold mb-2">Envase de Vidrio + Spray</h3>
+            <p class="text-xs text-gray-400 leading-relaxed">Envasamos en frascos de vidrio reforzado con atomizadores de excelente pulverización y etiqueta identificadora.</p>
+          </div>
+
+          <div class="bg-brand-black p-6 rounded-2xl border border-white/5 text-center relative">
+            <div class="w-12 h-12 rounded-full bg-brand-gold/10 text-brand-gold border border-brand-gold/30 font-serif font-bold text-lg flex items-center justify-center mx-auto mb-4">3</div>
+            <h3 class="text-white font-semibold mb-2">Entregas & Envíos</h3>
+            <p class="text-xs text-gray-400 leading-relaxed">Entregas sin costo ($0) en <strong>Talagante y Metro Línea 1</strong>. Envíos a todo Chile por pagar (Starken / Bluexpress).</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         6. SECCIÓN DE ENTREGAS Y PAGOS
+         ========================================================================= -->
+    <section id="entregas" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+        <div class="bg-gradient-to-br from-brand-card to-brand-black p-8 rounded-2xl border border-brand-gold/20">
+          <span class="text-xs font-semibold text-brand-gold uppercase tracking-wider block mb-2">Puntos de Entrega & Envíos</span>
+          <h3 class="font-serif text-2xl font-bold text-white mb-4">Coordinación directa por WhatsApp o Instagram</h3>
+          
+          <ul class="space-y-4 text-sm text-gray-300 mb-6">
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-brand-gold shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              <span><strong>Entregas Presenciales Sin Costo ($0):</strong> En la comuna de <strong>Talagante</strong> y en todas las estaciones de <strong>Metro Línea 1</strong>.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-brand-gold shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              <span><strong>Otras Entregas o Envíos a Chile:</strong> Puntos a convenir o despachos por pagar mediante Starken o Bluexpress.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-brand-gold shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              <span><strong>Medios de Pago:</strong> Transferencia electrónica directa a CuentaRUT.</span>
+            </li>
+          </ul>
+
+          <div class="flex flex-col sm:flex-row gap-3">
+            <a href="https://wa.me/56934040525?text=%C2%A1Hola!%20Quisiera%20coordinar%20un%20pedido%20de%20decants%20(Talagante%20/%20Metro%20L1)." target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full gold-button font-bold text-xs tracking-wider uppercase">
+              Pedir por WhatsApp
+            </a>
+            <a href="https://www.instagram.com/scentlabdecants.cl/" target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full ig-button font-bold text-xs tracking-wider uppercase">
+              Encargar por Instagram
+            </a>
+          </div>
+        </div>
+
+        <div class="bg-brand-card/40 p-8 rounded-2xl border border-white/5 space-y-6">
+          <h4 class="font-serif text-xl font-semibold text-white">Rendimiento por Formato</h4>
+          <p class="text-xs text-gray-400 leading-relaxed">
+            Cada decant viene en un frasco de vidrio recargable con atomizador spray de gran dispersión:
+          </p>
+          <div class="grid grid-cols-3 gap-4 text-center">
+            <div class="bg-brand-black p-3 rounded-lg border border-white/5">
+              <span class="block text-brand-gold font-bold text-lg font-serif">3 ml</span>
+              <span class="text-[10px] text-gray-400">~45 atomizaciones</span>
+            </div>
+            <div class="bg-brand-black p-3 rounded-lg border border-white/5">
+              <span class="block text-brand-gold font-bold text-lg font-serif">5 ml</span>
+              <span class="text-[10px] text-gray-400">~75 atomizaciones</span>
+            </div>
+            <div class="bg-brand-black p-3 rounded-lg border border-white/5">
+              <span class="block text-brand-gold font-bold text-lg font-serif">10 ml</span>
+              <span class="text-[10px] text-gray-400">~150 atomizaciones</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =========================================================================
+       7. FOOTER ELEGANTE
+       ========================================================================= -->
+  <footer class="bg-black border-t border-white/10 py-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-8 rounded-full border border-brand-gold/60 flex items-center justify-center bg-brand-card">
+          <span class="text-brand-gold font-serif text-xs font-bold">SCL</span>
+        </div>
+        <div>
+          <span class="font-serif text-sm font-bold text-white block">Scent Lab Chile</span>
+          <span class="text-[10px] text-gray-500">Decants de perfumería original en Chile</span>
+        </div>
+      </div>
+
+      <div class="text-xs text-gray-400 text-center flex flex-wrap justify-center gap-2">
+        <span>Instagram: <a href="https://www.instagram.com/scentlabdecants.cl/" target="_blank" rel="noopener" class="text-pink-400 hover:underline">@scentlabdecants.cl</a></span>
+        <span>•</span>
+        <span>WhatsApp: <a href="https://wa.me/56934040525" target="_blank" rel="noopener" class="text-brand-gold hover:underline">+56 9 3404 0525</a></span>
+      </div>
+
+      <div class="text-xs text-gray-600">
+        © 2026 Scent Lab Chile. Todos los derechos reservados.
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================================================================
+       8. MODAL DE DETALLE DEL PERFUME
+       ========================================================================= -->
+  <div id="product-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4">
+    <div id="modal-backdrop" class="absolute inset-0 bg-black/80 backdrop-blur-sm"></div>
+    <div id="modal-content" class="relative bg-brand-card border border-white/15 rounded-2xl max-w-2xl w-full overflow-hidden shadow-2xl z-10 max-h-[90vh] overflow-y-auto">
+      <!-- Renderizado dinámico -->
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       9. CARRITO / LISTA DE SELECCIÓN DRAWER
+       ========================================================================= -->
+  <div id="cart-drawer" class="fixed inset-0 z-50 pointer-events-none transition-opacity duration-300 opacity-0">
+    <div id="cart-backdrop" class="absolute inset-0 bg-black/70 backdrop-blur-sm pointer-events-auto"></div>
+
+    <div class="absolute inset-y-0 right-0 max-w-full flex pl-10">
+      <div class="w-screen max-w-md bg-brand-card border-l border-white/10 p-6 flex flex-col justify-between pointer-events-auto shadow-2xl">
+        
+        <div class="flex flex-col overflow-hidden">
+          <div class="flex items-center justify-between pb-4 border-b border-white/10">
+            <h3 class="font-serif text-lg sm:text-xl font-bold text-white flex items-center gap-2">
+              <span>Mi Lista de Decants</span>
+              <span id="cart-count-title" class="text-xs font-normal text-brand-gold">(0)</span>
+            </h3>
+            <div class="flex items-center gap-2">
+              <button id="cart-clear-btn" class="text-[11px] text-gray-400 hover:text-red-400 underline hidden">Vaciar</button>
+              <button id="cart-close-btn" class="text-gray-400 hover:text-white p-1" aria-label="Cerrar lista">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+              </button>
+            </div>
+          </div>
+
+          <div id="cart-items-container" class="mt-4 space-y-3 overflow-y-auto pr-1 flex-grow max-h-[45vh]">
+            <!-- Items agregados -->
+          </div>
+        </div>
+
+        <div class="pt-4 border-t border-white/10 space-y-3">
+          <!-- Selector de entrega dentro del carrito -->
+          <div>
+            <label for="delivery-select" class="text-[11px] text-gray-400 uppercase tracking-wider block mb-1.5 font-semibold">Método de entrega:</label>
+            <select id="delivery-select" class="w-full bg-brand-black border border-white/15 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-brand-gold">
+              <option value="Talagante (Sin costo $0)">Talagante (Sin costo $0)</option>
+              <option value="Metro Línea 1 (Sin costo $0)">Metro Línea 1 (Sin costo $0)</option>
+              <option value="Envío por pagar (Starken / Bluexpress)">Envío por pagar (Starken / Bluexpress)</option>
+            </select>
+          </div>
+
+          <div class="flex items-center justify-between pt-1">
+            <span class="text-sm text-gray-400">Total estimado:</span>
+            <span id="cart-total-price" class="font-serif text-xl font-bold text-brand-gold">$0</span>
+          </div>
+
+          <button id="cart-checkout-btn" class="w-full py-3 rounded-full gold-button font-bold text-xs tracking-wider uppercase flex items-center justify-center gap-2">
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+            Enviar lista por WhatsApp
+          </button>
+
+          <button id="cart-ig-checkout-btn" class="w-full py-3 rounded-full ig-button font-bold text-xs tracking-wider uppercase flex items-center justify-center gap-2">
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            Encargar lista por Instagram
+          </button>
+          <p class="text-[10px] text-center text-gray-500">Al encargar por Instagram se copia tu pedido listo para pegar en DM.</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-24 opacity-0 transition-all duration-300 bg-brand-gold text-black px-5 py-3 rounded-full font-semibold text-xs shadow-xl flex items-center gap-2 pointer-events-none max-w-[90vw]">
+    <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+    <span id="toast-msg">Agregado a tu lista</span>
+  </div>
+
+  <!-- Botón Flotante de WhatsApp -->
+  <a href="https://wa.me/56934040525?text=%C2%A1Hola%20Scent%20Lab%20Chile!%20%F0%9F%91%8B%20Vengo%20desde%20el%20cat%C3%A1logo%20web." target="_blank" rel="noopener" class="fixed bottom-6 left-6 z-40 bg-emerald-500 hover:bg-emerald-600 text-white p-3.5 rounded-full shadow-2xl transition-transform hover:scale-110 flex items-center justify-center group" title="WhatsApp Scent Lab Chile">
+    <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+      <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
+    </svg>
+    <span class="max-w-0 overflow-hidden whitespace-nowrap group-hover:max-w-xs transition-all duration-300 text-xs font-bold uppercase tracking-wider group-hover:ml-2">WhatsApp</span>
+  </a>
+
+  <!-- =========================================================================
+       10. JAVASCRIPT Y BASE DE DATOS DE PERFUMES
+       ========================================================================= -->
+  <script>
+    const WHATSAPP_NUMBER = '56934040525';
+    const INSTAGRAM_URL = 'https://www.instagram.com/scentlabdecants.cl/';
+
+    const PERFUMES_DATA = [
+      {
+        id: 'lattafa-yara',
+        brand: 'Lattafa',
+        name: 'Yara',
+        concentration: 'Eau de Parfum',
+        category: 'Árabes',
+        tags: ['Árabes', 'Dulces / Noche'],
+        images: ['yara-1.jpg', 'yara-2.jpg'],
+        badge: 'Favorito Viral',
+        description: 'Fragancia femenina dulce y cremosa inspirada en notas tropicales, vainilla dorada y orquídea suave.',
+        notes: {
+          salida: 'Mandarina, Orquídea, Heliotropo',
+          corazon: 'Acorde tropical, Frutas golosas',
+          fondo: 'Vainilla, Sándalo, Almizcle'
+        },
+        prices: { '3ml': 2000, '5ml': 3000, '10ml': 5000 }
+      },
+      {
+        id: 'most-wanted-parfum',
+        brand: 'Azzaro',
+        name: 'The Most Wanted Parfum',
+        concentration: 'Parfum',
+        category: 'Diseñador',
+        tags: ['Diseñador', 'Dulces / Noche'],
+        images: ['most-wanted-parfum-1.jpg', 'most-wanted-parfum-2.jpg'],
+        badge: 'Alta Gama',
+        description: 'Seducción intensa y cálida con jengibre rojo especiado, maderas calientes y rica vainilla Bourbon.',
+        notes: {
+          salida: 'Jengibre rojo especiado',
+          corazon: 'Acorde amaderado caliente',
+          fondo: 'Vainilla Bourbon de Madagascar'
+        },
+        prices: { '3ml': 5000, '5ml': 7500, '10ml': 13500 }
+      },
+      {
+        id: 'odyssey-mandarin-sky',
+        brand: 'Armaf',
+        name: 'Odyssey Mandarin Sky',
+        concentration: 'Eau de Parfum',
+        category: 'Árabes',
+        tags: ['Árabes', 'Dulces / Noche'],
+        images: ['odyssey-mandarin-sky-1.jpg', 'odyssey-mandarin-sky-2.jpg'],
+        badge: 'Edición Especial',
+        description: 'Mandarina jugosa acaramelada con matices de haba tonka y salvia. Gran proyección y dulzura.',
+        notes: {
+          salida: 'Mandarina, Naranja, Azafrán, Salvia',
+          corazon: 'Caramelo, Haba tonka, Tagetes',
+          fondo: 'Ambroxan, Sándalo, Cedro'
+        },
+        prices: { '3ml': 2500, '5ml': 3200, '10ml': 6000 }
+      },
+      {
+        id: 'hawas-for-him',
+        brand: 'Rasasi',
+        name: 'Hawas For Him',
+        concentration: 'Eau de Parfum',
+        category: 'Árabes',
+        tags: ['Árabes', 'Frescos / Diario'],
+        images: ['hawas-for-him-1.jpg', 'hawas-for-him-2.jpg'],
+        badge: 'Popular',
+        description: 'Combinación icónica acuática y frutal con manzana verde, canela especiada y base de ámbar gris.',
+        notes: {
+          salida: 'Manzana, Bergamota, Limón, Canela',
+          corazon: 'Ciruela, Flor de azahar, Cardamomo',
+          fondo: 'Ámbar gris, Almizcle, Madera flotante, Pachulí'
+        },
+        prices: { '3ml': 2000, '5ml': 3000, '10ml': 5000 }
+      },
+      {
+        id: 'amber-oud-gold',
+        brand: 'Al Haramain',
+        name: 'Amber Oud Gold Edition',
+        concentration: 'Eau de Parfum',
+        category: 'Árabes',
+        tags: ['Árabes', 'Dulces / Noche'],
+        images: ['amber-oud-gold-1.jpg', 'amber-oud-gold-2.jpg'],
+        badge: 'Best Seller',
+        description: 'Explosión frutal de melón dulce y piña envuelta en un manto dorado de ámbar, vainilla y almizcle.',
+        notes: {
+          salida: 'Bergamota, Notas verdes',
+          corazon: 'Melón, Piña, Notas dulces, Ámbar',
+          fondo: 'Almizcle, Vainilla, Notas amaderadas'
+        },
+        prices: { '3ml': 3500, '5ml': 5000, '10ml': 7500 }
+      },
+      {
+        id: 'hawas-ice',
+        brand: 'Rasasi',
+        name: 'Hawas Ice',
+        concentration: 'Eau de Parfum',
+        category: 'Árabes',
+        tags: ['Árabes', 'Frescos / Diario'],
+        images: ['hawas-ice-1.jpg', 'hawas-ice-2.jpg'],
+        badge: 'Top Ventas',
+        description: 'Fragancia fresca y helada con notas de manzana verde congelada, cítricos de Sicilia y fondo almizclado.',
+        notes: {
+          salida: 'Manzana congelada, Limón italiano, Bergamota, Anís estrellado',
+          corazon: 'Ciruela, Flor de azahar del naranjo, Cardamomo',
+          fondo: 'Almizcle, Ámbar, Musgo, Maderas a la deriva'
+        },
+        prices: { '3ml': 2500, '5ml': 4000, '10ml': 6000 }
+      }
+    ];
+
+    // Estado global
+    let currentCategory = 'Todos';
+    let searchQuery = '';
+    let cart = [];
+    const selectedSizes = {};
+    const selectedPhotoIndex = {};
+
+    // Cargar carrito guardado si existe
+    try {
+      const savedCart = localStorage.getItem('scentlab_cart');
+      if (savedCart) cart = JSON.parse(savedCart);
+    } catch (e) {
+      cart = [];
+    }
+
+    // Inicializar estado predeterminado
+    PERFUMES_DATA.forEach(p => {
+      selectedSizes[p.id] = '5ml';
+      selectedPhotoIndex[p.id] = 0;
+    });
+
+    const formatCLP = (amount) => {
+      return new Intl.NumberFormat('es-CL', {
+        style: 'currency',
+        currency: 'CLP',
+        maximumFractionDigits: 0
+      }).format(amount);
+    };
+
+    // Copiar texto al portapapeles con respaldo
+    async function copyToClipboard(text) {
+      try {
+        if (navigator.clipboard && window.isSecureContext) {
+          await navigator.clipboard.writeText(text);
+          return true;
+        }
+      } catch (err) {}
+      const textArea = document.createElement('textarea');
+      textArea.value = text;
+      textArea.style.position = 'fixed';
+      textArea.style.left = '-9999px';
+      document.body.appendChild(textArea);
+      textArea.focus();
+      textArea.select();
+      try {
+        document.execCommand('copy');
+        document.body.removeChild(textArea);
+        return true;
+      } catch (err) {
+        document.body.removeChild(textArea);
+        return false;
+      }
+    }
+
+    function saveCart() {
+      try {
+        localStorage.setItem('scentlab_cart', JSON.stringify(cart));
+      } catch (e) {}
+    }
+
+    // Cambiar foto activa en tarjeta
+    function setPhotoIndex(perfumeId, index, event) {
+      if (event) event.stopPropagation();
+      selectedPhotoIndex[perfumeId] = index;
+      renderPerfumes();
+    }
+
+    function changeSize(perfumeId, size) {
+      selectedSizes[perfumeId] = size;
+      renderPerfumes();
+    }
+
+    // Renderizar tarjetas de perfumes
+    function renderPerfumes() {
+      const grid = document.getElementById('perfumes-grid');
+      const noResults = document.getElementById('no-results');
+      
+      const filtered = PERFUMES_DATA.filter(p => {
+        const matchCategory = (currentCategory === 'Todos') || p.category === currentCategory || p.tags.includes(currentCategory);
+        const q = searchQuery.toLowerCase().trim();
+        const matchSearch = !q || 
+          p.name.toLowerCase().includes(q) || 
+          p.brand.toLowerCase().includes(q) ||
+          p.notes.salida.toLowerCase().includes(q) ||
+          p.notes.corazon.toLowerCase().includes(q) ||
+          p.notes.fondo.toLowerCase().includes(q);
+
+        return matchCategory && matchSearch;
+      });
+
+      if (filtered.length === 0) {
+        grid.innerHTML = '';
+        noResults.classList.remove('hidden');
+        return;
+      }
+      
+      noResults.classList.add('hidden');
+      grid.innerHTML = filtered.map(perfume => {
+        const activeSize = selectedSizes[perfume.id] || '5ml';
+        const currentPrice = perfume.prices[activeSize];
+        const activePhoto = selectedPhotoIndex[perfume.id] || 0;
+        const currentImgUrl = perfume.images[activePhoto] || perfume.images[0];
+        const fallbackSvg = `https://placehold.co/600x800/141418/d4af37?text=${encodeURIComponent(perfume.name)}`;
+
+        return `
+          <div class="bg-brand-card rounded-2xl border border-white/10 hover:border-brand-gold/40 transition-all duration-300 flex flex-col justify-between overflow-hidden group shadow-lg">
+            
+            <!-- Visor de Foto + Controles de Galería -->
+            <div onclick="openProductModal('${perfume.id}')" class="relative h-64 bg-gradient-to-b from-brand-black to-brand-card overflow-hidden flex items-center justify-center p-3 cursor-pointer" title="Haz clic para ver detalles">
+              <img src="${currentImgUrl}" alt="${perfume.name}" class="h-full w-full object-cover rounded-xl filter drop-shadow-md group-hover:scale-105 transition-transform duration-500" onerror="this.onerror=null; this.src='${fallbackSvg}';">
+              
+              <!-- Badges -->
+              <div class="absolute top-3 left-3 flex flex-wrap gap-1.5 z-10">
+                <span class="px-2.5 py-1 rounded-full bg-brand-black/85 border border-brand-gold/40 text-[10px] text-brand-gold font-semibold uppercase tracking-wider backdrop-blur-sm">
+                  ${perfume.category}
+                </span>
+                ${perfume.badge ? `<span class="px-2.5 py-1 rounded-full bg-brand-gold text-black text-[10px] font-bold uppercase tracking-wider">${perfume.badge}</span>` : ''}
+              </div>
+              
+              <!-- Botones Selector Foto 1 / Foto 2 -->
+              <div class="absolute bottom-3 right-3 flex items-center gap-1.5 bg-black/80 backdrop-blur-md px-2 py-1 rounded-full border border-white/10 z-10">
+                <button type="button" onclick="setPhotoIndex('${perfume.id}', 0, event)" class="px-2.5 py-1 rounded-full text-[10px] font-bold transition-all ${activePhoto === 0 ? 'bg-brand-gold text-black shadow-md' : 'text-gray-400 hover:text-white'}">
+                  Foto 1
+                </button>
+                <button type="button" onclick="setPhotoIndex('${perfume.id}', 1, event)" class="px-2.5 py-1 rounded-full text-[10px] font-bold transition-all ${activePhoto === 1 ? 'bg-brand-gold text-black shadow-md' : 'text-gray-400 hover:text-white'}">
+                  Foto 2
+                </button>
+              </div>
+            </div>
+
+            <!-- Detalles del Perfume -->
+            <div class="p-5 flex-grow flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between gap-2 mb-1">
+                  <span class="text-xs text-brand-gold uppercase tracking-widest font-semibold">${perfume.brand}</span>
+                  <button type="button" onclick="openProductModal('${perfume.id}')" class="text-[11px] text-gray-400 hover:text-brand-gold underline">Ver ficha</button>
+                </div>
+                <h3 onclick="openProductModal('${perfume.id}')" class="font-serif text-xl font-bold text-white leading-tight mb-1 cursor-pointer hover:text-brand-gold transition-colors">${perfume.name}</h3>
+                <span class="text-[11px] text-gray-400 block mb-3 font-light">${perfume.concentration}</span>
+
+                <p class="text-xs text-gray-300 font-light mb-4 leading-relaxed">${perfume.description}</p>
+
+                <!-- Notas Olfativas -->
+                <div class="bg-brand-black/60 p-3 rounded-xl border border-white/5 text-[11px] space-y-1 mb-5">
+                  <div><strong class="text-brand-gold font-medium">Salida:</strong> <span class="text-gray-300">${perfume.notes.salida}</span></div>
+                  <div><strong class="text-brand-gold font-medium">Corazón:</strong> <span class="text-gray-300">${perfume.notes.corazon}</span></div>
+                  <div><strong class="text-brand-gold font-medium">Fondo:</strong> <span class="text-gray-300">${perfume.notes.fondo}</span></div>
+                </div>
+              </div>
+
+              <!-- Selector de Tamaño (3ml / 5ml / 10ml) -->
+              <div>
+                <label class="text-[10px] text-gray-400 uppercase tracking-wider block mb-2 font-semibold">Seleccionar Formato Decant:</label>
+                <div class="grid grid-cols-3 gap-2 mb-4">
+                  <button type="button" onclick="changeSize('${perfume.id}', '3ml')" class="size-btn ${activeSize === '3ml' ? 'border-brand-gold bg-brand-gold/10 text-brand-gold' : 'border-white/10 text-gray-400 hover:border-white/30'} py-2 px-1 rounded-lg border text-center transition-all">
+                    <span class="block text-xs font-bold">3 ml</span>
+                    <span class="block text-[9px] opacity-75">${formatCLP(perfume.prices['3ml'])}</span>
+                  </button>
+                  <button type="button" onclick="changeSize('${perfume.id}', '5ml')" class="size-btn ${activeSize === '5ml' ? 'border-brand-gold bg-brand-gold/10 text-brand-gold' : 'border-white/10 text-gray-400 hover:border-white/30'} py-2 px-1 rounded-lg border text-center transition-all">
+                    <span class="block text-xs font-bold">5 ml</span>
+                    <span class="block text-[9px] opacity-75">${formatCLP(perfume.prices['5ml'])}</span>
+                  </button>
+                  <button type="button" onclick="changeSize('${perfume.id}', '10ml')" class="size-btn ${activeSize === '10ml' ? 'border-brand-gold bg-brand-gold/10 text-brand-gold' : 'border-white/10 text-gray-400 hover:border-white/30'} py-2 px-1 rounded-lg border text-center transition-all">
+                    <span class="block text-xs font-bold">10 ml</span>
+                    <span class="block text-[9px] opacity-75">${formatCLP(perfume.prices['10ml'])}</span>
+                  </button>
+                </div>
+
+                <!-- Muestra de Precio -->
+                <div class="flex items-center justify-between pt-2 border-t border-white/10 mb-4">
+                  <span class="text-xs text-gray-400">Precio (${activeSize}):</span>
+                  <span class="font-serif text-xl font-bold text-brand-gold">${formatCLP(currentPrice)}</span>
+                </div>
+
+                <!-- Botones de Acción -->
+                <div class="space-y-2">
+                  <button type="button" onclick="sendSingleWhatsApp('${perfume.id}')" class="w-full py-2.5 rounded-xl gold-button font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2">
+                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+                    Pedir por WhatsApp
+                  </button>
+
+                  <button type="button" onclick="sendSingleInstagram('${perfume.id}')" class="w-full py-2.5 rounded-xl ig-button font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2">
+                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    Encargar por Instagram
+                  </button>
+
+                  <button type="button" onclick="addToCart('${perfume.id}')" class="w-full py-2 rounded-xl border border-white/10 hover:border-brand-gold/60 text-gray-300 hover:text-white text-xs font-semibold tracking-wider transition-colors flex items-center justify-center gap-1.5">
+                    <span>+ Agregar a mi lista de pedido</span>
+                  </button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    // Modal de ficha técnica del perfume
+    function openProductModal(perfumeId) {
+      const perfume = PERFUMES_DATA.find(p => p.id === perfumeId);
+      if (!perfume) return;
+
+      const modal = document.getElementById('product-modal');
+      const content = document.getElementById('modal-content');
+      const activeSize = selectedSizes[perfume.id] || '5ml';
+      const currentPrice = perfume.prices[activeSize];
+      const fallbackSvg = `https://placehold.co/600x800/141418/d4af37?text=${encodeURIComponent(perfume.name)}`;
+
+      content.innerHTML = `
+        <button type="button" onclick="closeProductModal()" class="absolute top-4 right-4 z-20 bg-black/70 text-gray-300 hover:text-white p-2 rounded-full border border-white/15">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+
+        <div class="grid grid-cols-1 md:grid-cols-2">
+          <div class="bg-brand-black p-4 flex flex-col gap-3 justify-center">
+            <img src="${perfume.images[0]}" alt="${perfume.name}" class="w-full h-64 object-cover rounded-xl" onerror="this.onerror=null; this.src='${fallbackSvg}';">
+            <div class="grid grid-cols-2 gap-2">
+              <img src="${perfume.images[0]}" alt="Vista 1" class="w-full h-20 object-cover rounded-lg border border-brand-gold/40" onerror="this.onerror=null; this.src='${fallbackSvg}';">
+              <img src="${perfume.images[1] || perfume.images[0]}" alt="Vista 2" class="w-full h-20 object-cover rounded-lg border border-white/10" onerror="this.onerror=null; this.src='${fallbackSvg}';">
+            </div>
+          </div>
+
+          <div class="p-6 flex flex-col justify-between space-y-4">
+            <div>
+              <span class="text-xs text-brand-gold uppercase tracking-widest font-semibold">${perfume.brand} • ${perfume.category}</span>
+              <h3 class="font-serif text-2xl font-bold text-white mt-1">${perfume.name}</h3>
+              <p class="text-xs text-gray-400 mb-3">${perfume.concentration}</p>
+              <p class="text-xs text-gray-300 leading-relaxed mb-4">${perfume.description}</p>
+
+              <div class="bg-brand-black/70 p-3 rounded-xl border border-white/5 text-xs space-y-1.5">
+                <div><strong class="text-brand-gold">Salida:</strong> <span class="text-gray-300">${perfume.notes.salida}</span></div>
+                <div><strong class="text-brand-gold">Corazón:</strong> <span class="text-gray-300">${perfume.notes.corazon}</span></div>
+                <div><strong class="text-brand-gold">Fondo:</strong> <span class="text-gray-300">${perfume.notes.fondo}</span></div>
+              </div>
+            </div>
+
+            <div class="space-y-3 pt-2 border-t border-white/10">
+              <div class="grid grid-cols-3 gap-2">
+                ${['3ml', '5ml', '10ml'].map(sz => `
+                  <button type="button" onclick="changeSize('${perfume.id}', '${sz}'); openProductModal('${perfume.id}')" class="${activeSize === sz ? 'border-brand-gold bg-brand-gold/10 text-brand-gold' : 'border-white/10 text-gray-400'} py-2 rounded-lg border text-center">
+                    <span class="block text-xs font-bold">${sz}</span>
+                    <span class="block text-[10px]">${formatCLP(perfume.prices[sz])}</span>
+                  </button>
+                `).join('')}
+              </div>
+
+              <div class="flex items-center justify-between">
+                <span class="text-xs text-gray-400">Total seleccionado:</span>
+                <span class="font-serif text-xl font-bold text-brand-gold">${formatCLP(currentPrice)}</span>
+              </div>
+
+              <button type="button" onclick="sendSingleWhatsApp('${perfume.id}')" class="w-full py-2.5 rounded-xl gold-button font-bold text-xs uppercase tracking-wider">
+                Pedir por WhatsApp
+              </button>
+              <button type="button" onclick="sendSingleInstagram('${perfume.id}')" class="w-full py-2.5 rounded-xl ig-button font-bold text-xs uppercase tracking-wider">
+                Encargar por Instagram
+              </button>
+              <button type="button" onclick="addToCart('${perfume.id}'); closeProductModal()" class="w-full py-2 rounded-xl border border-white/15 text-gray-200 hover:text-white text-xs font-semibold">
+                + Agregar a mi lista
+              </button>
+            </div>
+          </div>
+        </div>
+      `;
+
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closeProductModal() {
+      const modal = document.getElementById('product-modal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    // Construir mensaje individual
+    function buildSingleOrderMessage(perfumeId) {
+      const perfume = PERFUMES_DATA.find(p => p.id === perfumeId);
+      const size = selectedSizes[perfumeId] || '5ml';
+      const price = perfume.prices[size];
+
+      return `¡Hola Scent Lab Chile! 👋 Quisiera encargar este decant:\n\n` +
+        `• Perfume: ${perfume.brand} - ${perfume.name} (${perfume.concentration})\n` +
+        `• Formato: ${size}\n` +
+        `• Valor: ${formatCLP(price)}\n\n` +
+        `📍 Punto de entrega preferido (Talagante / Metro Línea 1 / Envío por pagar): `;
+    }
+
+    // Pedir 1 perfume directo por WhatsApp
+    function sendSingleWhatsApp(perfumeId) {
+      const text = buildSingleOrderMessage(perfumeId);
+      const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
+      window.open(url, '_blank', 'noopener');
+    }
+
+    // Encargar 1 perfume por Instagram (copia el mensaje + abre @scentlabdecants.cl)
+    async function sendSingleInstagram(perfumeId) {
+      const text = buildSingleOrderMessage(perfumeId);
+      await copyToClipboard(text);
+      showToast('Pedido copiado. Pégalo en nuestro DM de Instagram');
+      setTimeout(() => {
+        window.open(INSTAGRAM_URL, '_blank', 'noopener');
+      }, 450);
+    }
+
+    // Agregar al carrito / lista
+    function addToCart(perfumeId) {
+      const perfume = PERFUMES_DATA.find(p => p.id === perfumeId);
+      const size = selectedSizes[perfumeId] || '5ml';
+      const price = perfume.prices[size];
+
+      const existingIndex = cart.findIndex(item => item.id === perfumeId && item.size === size);
+      
+      if (existingIndex > -1) {
+        cart[existingIndex].quantity += 1;
+      } else {
+        cart.push({
+          id: perfume.id,
+          brand: perfume.brand,
+          name: perfume.name,
+          size: size,
+          price: price,
+          quantity: 1
+        });
+      }
+
+      saveCart();
+      updateCartUI();
+      showToast(`Agregado: ${perfume.name} (${size})`);
+    }
+
+    function updateCartUI() {
+      const badge = document.getElementById('cart-badge');
+      const cartContainer = document.getElementById('cart-items-container');
+      const totalDisplay = document.getElementById('cart-total-price');
+      const titleCount = document.getElementById('cart-count-title');
+      const clearBtn = document.getElementById('cart-clear-btn');
+
+      const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+      const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+
+      if (totalItems > 0) {
+        badge.innerText = totalItems;
+        badge.classList.remove('opacity-0');
+        clearBtn.classList.remove('hidden');
+      } else {
+        badge.classList.add('opacity-0');
+        clearBtn.classList.add('hidden');
+      }
+
+      titleCount.innerText = `(${totalItems})`;
+      totalDisplay.innerText = formatCLP(totalPrice);
+
+      if (cart.length === 0) {
+        cartContainer.innerHTML = `
+          <div class="text-center py-12 text-gray-500">
+            <svg class="w-10 h-10 mx-auto mb-2 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+            <p class="text-xs">Tu lista está vacía</p>
+            <p class="text-[10px] mt-1">Selecciona decants y presiona "+ Agregar a mi lista"</p>
+          </div>
+        `;
+        return;
+      }
+
+      cartContainer.innerHTML = cart.map((item, index) => `
+        <div class="flex items-center justify-between bg-brand-black p-3 rounded-xl border border-white/5">
+          <div class="pr-2">
+            <span class="text-[10px] text-brand-gold uppercase tracking-wider block font-medium">${item.brand}</span>
+            <h4 class="text-xs font-bold text-white">${item.name}</h4>
+            <span class="text-[10px] text-gray-400">Formato: ${item.size} • ${formatCLP(item.price)} c/u</span>
+          </div>
+
+          <div class="flex items-center gap-2 shrink-0">
+            <div class="flex items-center gap-1.5 bg-brand-card px-2 py-1 rounded-lg border border-white/10 text-xs">
+              <button type="button" onclick="updateQuantity(${index}, -1)" class="text-gray-400 hover:text-white px-1 font-bold">-</button>
+              <span class="text-white font-semibold">${item.quantity}</span>
+              <button type="button" onclick="updateQuantity(${index}, 1)" class="text-gray-400 hover:text-white px-1 font-bold">+</button>
+            </div>
+            <button type="button" onclick="removeFromCart(${index})" class="text-red-400 hover:text-red-300 p-1" title="Eliminar">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
+            </button>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function updateQuantity(index, delta) {
+      cart[index].quantity += delta;
+      if (cart[index].quantity <= 0) {
+        cart.splice(index, 1);
+      }
+      saveCart();
+      updateCartUI();
+    }
+
+    function removeFromCart(index) {
+      cart.splice(index, 1);
+      saveCart();
+      updateCartUI();
+    }
+
+    function buildCartOrderMessage() {
+      const deliveryMethod = document.getElementById('delivery-select').value;
+      let text = `¡Hola Scent Lab Chile! 👋 Quisiera encargar la siguiente lista de decants:\n\n`;
+      let total = 0;
+
+      cart.forEach((item, i) => {
+        const subtotal = item.price * item.quantity;
+        total += subtotal;
+        text += `${i + 1}. ${item.brand} - ${item.name}\n   • Formato: ${item.size} x${item.quantity} (${formatCLP(subtotal)})\n`;
+      });
+
+      text += `\n--------------------------\n`;
+      text += `💰 TOTAL ESTIMADO: ${formatCLP(total)}\n`;
+      text += `📍 Entrega: ${deliveryMethod}`;
+      return text;
+    }
+
+    // Checkout del Carrito vía WhatsApp
+    document.getElementById('cart-checkout-btn').addEventListener('click', () => {
+      if (cart.length === 0) {
+        showToast('Agrega decants a tu lista primero');
+        return;
+      }
+      const text = buildCartOrderMessage();
+      const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
+      window.open(url, '_blank', 'noopener');
+    });
+
+    // Checkout del Carrito vía Instagram
+    document.getElementById('cart-ig-checkout-btn').addEventListener('click', async () => {
+      if (cart.length === 0) {
+        showToast('Agrega decants a tu lista primero');
+        return;
+      }
+      const text = buildCartOrderMessage();
+      await copyToClipboard(text);
+      showToast('Lista copiada. Pégalo en nuestro DM de Instagram');
+      setTimeout(() => {
+        window.open(INSTAGRAM_URL, '_blank', 'noopener');
+      }, 450);
+    });
+
+    // Vaciar carrito
+    document.getElementById('cart-clear-btn').addEventListener('click', () => {
+      cart = [];
+      saveCart();
+      updateCartUI();
+      showToast('Lista vaciada');
+    });
+
+    let toastTimeout;
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      const toastMsg = document.getElementById('toast-msg');
+      toastMsg.innerText = msg;
+      
+      toast.classList.remove('translate-y-24', 'opacity-0');
+      toast.classList.add('translate-y-0', 'opacity-100');
+
+      clearTimeout(toastTimeout);
+      toastTimeout = setTimeout(() => {
+        toast.classList.remove('translate-y-0', 'opacity-100');
+        toast.classList.add('translate-y-24', 'opacity-0');
+      }, 3000);
+    }
+
+    // Drawer Listeners
+    const drawer = document.getElementById('cart-drawer');
+    const toggleBtn = document.getElementById('cart-toggle-btn');
+    const closeBtn = document.getElementById('cart-close-btn');
+    const backdrop = document.getElementById('cart-backdrop');
+
+    function openDrawer() {
+      drawer.classList.remove('pointer-events-none', 'opacity-0');
+      drawer.classList.add('pointer-events-auto', 'opacity-100');
+    }
+
+    function closeDrawer() {
+      drawer.classList.remove('pointer-events-auto', 'opacity-100');
+      drawer.classList.add('pointer-events-none', 'opacity-0');
+    }
+
+    toggleBtn.addEventListener('click', openDrawer);
+    closeBtn.addEventListener('click', closeDrawer);
+    backdrop.addEventListener('click', closeDrawer);
+
+    // Modal Backdrop & Escape key
+    document.getElementById('modal-backdrop').addEventListener('click', closeProductModal);
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeProductModal();
+        closeDrawer();
+      }
+    });
+
+    // Menú móvil
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+    document.querySelectorAll('.mobile-nav-link').forEach(link => {
+      link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+    });
+
+    // Filtros & Buscador
+    const searchInput = document.getElementById('search-input');
+    const clearSearchBtn = document.getElementById('clear-search-btn');
+
+    searchInput.addEventListener('input', (e) => {
+      searchQuery = e.target.value;
+      clearSearchBtn.classList.toggle('hidden', !searchQuery);
+      renderPerfumes();
+    });
+
+    clearSearchBtn.addEventListener('click', () => {
+      searchQuery = '';
+      searchInput.value = '';
+      clearSearchBtn.classList.add('hidden');
+      renderPerfumes();
+    });
+
+    function setActiveCategoryButton(category) {
+      document.querySelectorAll('.filter-btn').forEach(b => {
+        if (b.getAttribute('data-category') === category) {
+          b.classList.add('active', 'bg-brand-gold', 'text-black');
+          b.classList.remove('border', 'border-white/10', 'text-gray-300');
+        } else {
+          b.classList.remove('active', 'bg-brand-gold', 'text-black');
+          b.classList.add('border', 'border-white/10', 'text-gray-300');
+        }
+      });
+    }
+
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        currentCategory = e.currentTarget.getAttribute('data-category');
+        setActiveCategoryButton(currentCategory);
+        renderPerfumes();
+      });
+    });
+
+    document.getElementById('reset-filters-btn').addEventListener('click', () => {
+      currentCategory = 'Todos';
+      searchQuery = '';
+      searchInput.value = '';
+      clearSearchBtn.classList.add('hidden');
+      setActiveCategoryButton('Todos');
+      renderPerfumes();
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+      renderPerfumes();
+      updateCartUI();
+    });
+  </script>
+</body>
+</html>
