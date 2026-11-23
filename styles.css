@@ -1,0 +1,70 @@
+/* =========================================================================
+   SCENT LAB CHILE - ESTILOS PERSONALIZADOS
+   ========================================================================= */
+
+body {
+  background-color: #0b0b0d;
+  color: #e5e7eb;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.gold-gradient-text {
+  background: linear-gradient(135deg, #fff2a3 0%, #d4af37 50%, #aa7c11 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-button {
+  background: linear-gradient(135deg, #d4af37 0%, #b8860b 100%);
+  color: #000;
+  transition: all 0.25s ease;
+}
+
+.gold-button:hover {
+  background: linear-gradient(135deg, #e5be38 0%, #d4af37 100%);
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.35);
+  transform: translateY(-1px);
+}
+
+.ig-button {
+  background: linear-gradient(135deg, rgba(225, 48, 108, 0.16) 0%, rgba(131, 58, 180, 0.16) 100%);
+  border: 1px solid rgba(225, 48, 108, 0.45);
+  color: #f9a8d4;
+  transition: all 0.25s ease;
+}
+
+.ig-button:hover {
+  background: linear-gradient(135deg, #e1306c 0%, #833ab4 100%);
+  border-color: transparent;
+  color: #ffffff;
+  box-shadow: 0 0 18px rgba(225, 48, 108, 0.35);
+  transform: translateY(-1px);
+}
+
+/* Scrollbar personalizada */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0b0b0d;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #27272a;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #d4af37;
+}
+
+/* Ocultar scrollbar horizontal en filtros móviles */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
