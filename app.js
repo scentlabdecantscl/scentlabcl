@@ -8,8 +8,8 @@
   // 1. CONFIGURACIÓN DE CONTACTO
   const CONFIG = {
     whatsappNumber: '56934040525',
-    instagramUrl: 'https://www.instagram.com/scentlabdecants.cl/',
-    instagramHandle: '@scentlabdecants.cl'
+    instagramUrl: 'https://www.instagram.com/scentlabdecantscl/',
+    instagramHandle: '@scentlabdecantscl'
   };
 
   // 2. BASE DE DATOS DE PERFUMES (Edita o agrega perfumes aquí)
